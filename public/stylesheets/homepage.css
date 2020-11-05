@@ -6,3 +6,8 @@ body {
 .spacing {
   margin: 8rem 0 5rem;
 }
+
+.iconSizing {
+  max-width: 20%;
+  height: auto;
+}
