@@ -11,6 +11,7 @@
     "debug": "^4.2.0",
     "ejs": "~0.8.5",
     "express": "^4.17.1",
+    "kill-port": "^1.6.1",
     "morgan": "^1.10.0",
     "static-favicon": "~1.0.0"
   }
