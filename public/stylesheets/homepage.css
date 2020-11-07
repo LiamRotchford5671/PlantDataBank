@@ -22,3 +22,11 @@ body {
   max-width: 20%;
   height: auto;
 }
+
+.carouselCards {
+  float: left;
+}
+
+.carouselCardBtns {
+  float: right;
+}
