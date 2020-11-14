@@ -23,9 +23,9 @@
             <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
               <div class="input-group input-group-lg">
                 <div class="input-group-prepend">
-                  <button class="input-group-text" id="inputGroup-sizing-lg">Search</button>
+                  <button class="input-group-text" id="searchBtn" onclick="getSearchResults()">Search</button>
                 </div>
-                <input type="text" class="form-control" aria-label="SearchBar">
+                <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
               </div>
             </div>
           </div>
@@ -241,6 +241,7 @@
     </section>
 
 
+    <script type="text/javascript" src="../javascripts/homepage.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

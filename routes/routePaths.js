@@ -1,9 +1,14 @@
 const express = require('express');
-var router = express.Router();
+const app = express();
+const router = express.Router();
 const axois = require('axios');
+const url = require('url');
 
 
-const url = 'https://trefle.io/api/v1/plants?token=' + `${token}`;
+
+const urlSearch = 'https://trefle.io/api/v1/plants/search?token=' + `${token}`;
+
+app.use(express.static('public'))
 
 /* GET home page. */
 router.get('/', function (req, res) {
@@ -12,15 +17,17 @@ router.get('/', function (req, res) {
 });
 
 //API main fetch (only first page (30 results returned))
-router.get('/searchResults', async (req, res) => {
+router.get('/results', async (req, res) => {
 
-  let dataRes = [];
-  const query = await axois.get(url)
-    .then(resp => console.log(resp.data.length))
+  const queryObject = url.parse(req.url, true).query;
+  let searchStr = Object.values(queryObject);
+
+  const query = await axois.get(urlSearch + '&q=' + searchStr)
+    .then(resp => console.log(resp.data))
     .catch(err => console.error(err));
-
 
   res.end();
 });
+
 
 module.exports = router;
