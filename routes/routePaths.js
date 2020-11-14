@@ -16,7 +16,7 @@ router.get('/', function (req, res) {
   res.end();
 });
 
-//API main fetch (only first page (30 results returned))
+//API Search Bar results page
 router.get('/results', async (req, res) => {
 
   const queryObject = url.parse(req.url, true).query;
