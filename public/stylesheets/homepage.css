@@ -35,3 +35,23 @@ body {
 .carouselCardBtns {
   float: right;
 }
+
+/* Accessibility States */
+button:hover,
+button:focus {
+  background-color: #6c8094;
+  border-color: #6c8094;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #69d500;
+  border-color: #69d500;
+}
+
+button:active,
+.btn:active {
+  background-color: #333;
+  border-color: #333;
+  color: #eee;
+}
