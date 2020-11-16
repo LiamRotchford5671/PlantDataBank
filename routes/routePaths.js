@@ -4,8 +4,7 @@ const router = express.Router();
 const axois = require('axios');
 const url = require('url');
 
-
-
+const token = process.env.API_TOKEN;
 const urlSearch = 'https://trefle.io/api/v1/plants/search?token=' + `${token}`;
 
 app.use(express.static('public'))
