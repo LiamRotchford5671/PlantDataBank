@@ -27,6 +27,11 @@ body {
   float: left;
 }
 
+.btnColoring {
+  background-color: #008500;
+  border-color: #008500;
+}
+
 .carouselCardBtns {
   float: right;
 }
