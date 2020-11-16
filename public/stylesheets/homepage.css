@@ -30,3 +30,16 @@ body {
 .carouselCardBtns {
   float: right;
 }
+
+.navbar-brand{
+  font-size: x-large;
+  color: #FFF;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.nav-link {
+  font-size: large;
+  color: #FFF;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
