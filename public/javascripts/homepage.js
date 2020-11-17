@@ -13,3 +13,13 @@ function getSearchResults() {
 
     window.location.href = 'results?q=' + `${searchString}`;
 }
+
+/* Major Plant Kingdom Event */
+
+/* Vascular */
+
+const vascular = document.getElementById("vascularBtn");
+
+vascular.addEventListener('click', event => {
+    window.location.href = 'results?genus=senecio';
+});
