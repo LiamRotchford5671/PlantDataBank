@@ -14,12 +14,46 @@ function getSearchResults() {
     window.location.href = 'results?q=' + `${searchString}`;
 }
 
-/* Major Plant Kingdom Event */
+/*Plant Genus Category Events */
 
-/* Vascular */
+/* Abies */
+const Abies = document.getElementById("abiesBtn");
 
-const vascular = document.getElementById("vascularBtn");
+Abies.addEventListener('click', event => {
+    window.location.href = 'results?genus=abies';
+});
 
-vascular.addEventListener('click', event => {
+/* Carex */
+const Carex = document.getElementById("carexBtn");
+
+Carex.addEventListener('click', event => {
+    window.location.href = 'results?genus=carex';
+});
+
+/* Fraxinus */
+const Fraxinus = document.getElementById("fraxinusBtn");
+
+Fraxinus.addEventListener('click', event => {
+    window.location.href = 'results?genus=fraxinus';
+});
+
+/* Senecio */
+const Senecio = document.getElementById("senecioBtn");
+
+Senecio.addEventListener('click', event => {
     window.location.href = 'results?genus=senecio';
+});
+
+/* Sorbus */
+const Sorbus = document.getElementById("sorbusBtn");
+
+Sorbus.addEventListener('click', event => {
+    window.location.href = 'results?genus=sorbus';
+});
+
+/* Torilis */
+const Torilis = document.getElementById("torilisBtn");
+
+Torilis.addEventListener('click', event => {
+    window.location.href = 'results?genus=torilis';
 });
