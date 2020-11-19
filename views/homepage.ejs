@@ -150,7 +150,8 @@
                     alt="<%= data.Plants[0].common_name %> Image">
                   <div class="card-body">
                     <h4 class="card-title"><%= data.Plants[0].common_name %></h4>
-                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                    <button id="carouselCard1" class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns"
+                      role="button" value="<%= data.Plants[0].slug %>"
                       aria-label="View <%= data.Plants[0].common_name %> Button">View
                       <%= data.Plants[0].common_name %></button>
                   </div>
@@ -163,7 +164,8 @@
                     alt="<%= data.Plants[1].common_name %> Image">
                   <div class="card-body">
                     <h4 class="card-title"><%= data.Plants[1].common_name %></h4>
-                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                    <button id="carouselCard2" class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns"
+                      role="button" value="<%= data.Plants[1].slug %>"
                       aria-label="View <%= data.Plants[1].common_name %> Button">View
                       <%= data.Plants[1].common_name %></button>
                   </div>
@@ -176,7 +178,8 @@
                     alt="<%= data.Plants[2].common_name %> Image">
                   <div class="card-body">
                     <h4 class="card-title"><%= data.Plants[2].common_name %></h4>
-                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                    <button id="carouselCard3" class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns"
+                      role="button" value="<%= data.Plants[2].slug %>"
                       aria-label="View <%= data.Plants[2].common_name %> Button">View
                       <%= data.Plants[2].common_name %></button>
                   </div>
@@ -189,7 +192,8 @@
                     alt="<%= data.Plants[3].common_name %> Image">
                   <div class="card-body">
                     <h4 class="card-title"><%= data.Plants[3].common_name %></h4>
-                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                    <button id="carouselCard4" class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns"
+                      role="button" value="<%= data.Plants[3].slug %>"
                       aria-label="View <%= data.Plants[3].common_name %> Button">View
                       <%= data.Plants[3].common_name %></button>
                   </div>
@@ -207,7 +211,8 @@
                     alt="<%= data.Plants[4].common_name %> Image">
                   <div class="card-body">
                     <h4 class="card-title"><%= data.Plants[4].common_name %></h4>
-                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                    <button id="carouselCard5" class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns"
+                      role="button" value="<%= data.Plants[4].slug %>"
                       aria-label="View <%= data.Plants[4].common_name %> Button">View
                       <%= data.Plants[4].common_name %></button>
                   </div>
@@ -220,7 +225,8 @@
                     alt="<%= data.Plants[5].common_name %> Image">
                   <div class="card-body">
                     <h4 class="card-title"><%= data.Plants[5].common_name %></h4>
-                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                    <button id="carouselCard6" class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns"
+                      role="button" value="<%= data.Plants[5].slug %>"
                       aria-label="View <%= data.Plants[5].common_name %> Button">View
                       <%= data.Plants[5].common_name %></button>
                   </div>
@@ -233,7 +239,8 @@
                     alt="<%= data.Plants[6].common_name %> Image">
                   <div class="card-body">
                     <h4 class="card-title"><%= data.Plants[6].common_name %></h4>
-                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                    <button id="carouselCard7" class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns"
+                      role="button" value="<%= data.Plants[6].slug %>"
                       aria-label="View <%= data.Plants[6].common_name %> Button">View
                       <%= data.Plants[6].common_name %></button>
                   </div>
@@ -246,7 +253,8 @@
                     alt="<%= data.Plants[7].common_name %> Image">
                   <div class="card-body">
                     <h4 class="card-title"><%= data.Plants[7].common_name %></h4>
-                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                    <button id="carouselCard8" class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns"
+                      role="button" value="<%= data.Plants[7].slug %>"
                       aria-label="View <%= data.Plants[7].common_name %> Button">View
                       <%= data.Plants[7].common_name %></button>
                   </div>
@@ -284,6 +292,7 @@
     </section>
 
 
+    <script type="text/javascript" src="../javascripts/homepage.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

@@ -11,7 +11,8 @@ const urlAPI = 'https://trefle.io/api/v1/';
 
 app.use(express.static('public'))
 
-/* GET home page. */
+/* GET Homepage Page */
+/* Handles Suggestion Cards */
 router.get('/', function (req, res) {
   let sgtdata = fs.readFileSync('./public/json/suggestionsData.json');
   let sgtObj = JSON.parse(sgtdata);
@@ -23,7 +24,8 @@ router.get('/', function (req, res) {
   res.end();
 });
 
-//API Search Bar results page
+/* GET Results Page */
+/* Handles SearchBar, and Genus Category Search Results */
 router.get('/results', async (req, res) => {
 
   const queryObject = url.parse(req.url, true).query;
@@ -32,7 +34,7 @@ router.get('/results', async (req, res) => {
 
   if (determine == 'genus') {
     let genusObj = await axois.get(urlAPI + 'genus/' + searchStr + '/plants?token=' + token + '&genus=' + searchStr)
-      .then(resp => console.log(resp.data))
+      //.then(resp => console.log(resp.data))
       .catch(err => console.error(err));
 
     res.render('results', {
@@ -40,7 +42,7 @@ router.get('/results', async (req, res) => {
     });
   } else {
     let searchObj = await axois.get(urlAPI + 'plants/search?token=' + token + '&q=' + searchStr)
-      .then(resp => console.log(resp.data))
+      //.then(resp => console.log(resp.data))
       .catch(err => console.error(err));
 
     res.render('results', {
@@ -51,5 +53,22 @@ router.get('/results', async (req, res) => {
   res.end();
 });
 
+/* GET PlantInformation Page */
+/* Handles Suggestion Cards and Results Page Plant options */
+router.get('/plantInformation', async (req, res) => {
+
+  const queryObject = url.parse(req.url, true).query;
+  let plantStr = Object.values(queryObject);;
+
+  let plantObj = await axois.get(urlAPI + 'plants/' + plantStr + '?token=' + token)
+    .then(resp => console.log(resp.data))
+    .catch(err => console.error(err));
+
+  res.render('plantInformation', {
+    data: plantObj
+  });
+
+  res.end();
+});
 
 module.exports = router;
