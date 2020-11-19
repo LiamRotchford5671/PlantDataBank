@@ -51,7 +51,8 @@
                 family. Characterized by flattish leaves, smooth circular leaf scars, and erect cones, and are valued
                 for their wood</p>
             </div>
-            <button id="abiesBtn" class="btn text-light btnColoring btn-lg mb-3" role="button" aria-pressed="true">View
+            <button id="abiesBtn" class="btn text-light btnColoring btn-lg mb-3" aria-label="Abies Genus Search Button"
+              role="button" aria-pressed="true">View
               Abies Plants</button>
           </div>
 
@@ -63,7 +64,8 @@
                 cyperaceae family, commonly known as sedges. The leaves of Carex comprise a blade, which extends away
                 from the stalk.</p>
             </div>
-            <button id="carexBtn" class="btn text-light btnColoring btn-lg mb-3" role="button" aria-pressed="true">View
+            <button id="carexBtn" class="btn text-light btnColoring btn-lg mb-3" aria-label="Carex Genus Search Button"
+              role="button" aria-pressed="true">View
               Carex Plants</button>
           </div>
 
@@ -75,8 +77,8 @@
                 contains 45–65 species of usually medium to large trees, mostly deciduous, though a number of
                 subtropical species are evergreen.</p>
             </div>
-            <button id="fraxinusBtn" class="btn text-light btnColoring btn-lg mb-3" role="button"
-              aria-pressed="true">View Fraxinus Plants</button>
+            <button id="fraxinusBtn" class="btn text-light btnColoring btn-lg mb-3"
+              aria-label="Fraxinus Genus Search Button" role="button" aria-pressed="true">View Fraxinus Plants</button>
           </div>
 
         </div>
@@ -93,8 +95,8 @@
                 the heads borne in branched clusters, and usually completely yellow, but green, purple, white and blue
                 flowers are known as well.</p>
             </div>
-            <button id="senecioBtn" class="btn text-light btnColoring btn-lg mb-3" role="button"
-              aria-pressed="true">View Senecio Plants</button>
+            <button id="senecioBtn" class="btn text-light btnColoring btn-lg mb-3"
+              aria-label="Senecio Genus Search Button" role="button" aria-pressed="true">View Senecio Plants</button>
           </div>
 
           <div class="card elementShadow align-items-center col-lg-4 col-auto my-lg-1 my-md-5 my-sm-5">
@@ -105,7 +107,8 @@
                 family. They are small- to medium-sized trees, occasionally shrubs, with ornamental flowering, fruiting
                 and autumnal colour attributes.</p>
             </div>
-            <button id="sorbusBtn" class="btn text-light btnColoring btn-lg mb-3" role="button" aria-pressed="true">View
+            <button id="sorbusBtn" class="btn text-light btnColoring btn-lg mb-3"
+              aria-label="Sorbus Genus Search Button" role="button" aria-pressed="true">View
               Sorbus Plants</button>
           </div>
 
@@ -117,8 +120,8 @@
                 hedge parsleys. It consist of annual or rarely perennial, hairy or bristly hairy herbs with a taproot.
               </p>
             </div>
-            <button id="torilisBtn" class="btn text-light btnColoring btn-lg mb-3" role="button"
-              aria-pressed="true">View Torilis Plants</button>
+            <button id="torilisBtn" class="btn text-light btnColoring btn-lg mb-3"
+              aria-label="Torilis Genus Search Button" role="button" aria-pressed="true">View Torilis Plants</button>
           </div>
 
         </div>
@@ -134,7 +137,7 @@
 
 
       <section class="row">
-        <div id="multi-item" class="carousel slide carousel-multi-item" data-ride="carousel">
+        <div id="suggestions" class="carousel slide carousel-multi-item col-12" data-ride="carousel">
 
           <div class="carousel-inner mx-auto" role="listbox">
 
@@ -143,48 +146,52 @@
 
               <div class="carouselCards col-sm-12 col-md-12 col-lg-3">
                 <div class="card elementShadow mb-2">
-                  <img class="card-img-top" src="" height="300px" alt="Slide Set 1, Card 1">
+                  <img class="card-img-top" src="<%= data.Plants[0].image_url %>" height="380px"
+                    alt="<%= data.Plants[0].common_name %> Image">
                   <div class="card-body">
-                    <h2 class="card-title">Plant Name</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                      card's content.</p>
-                    <button class="btn text-light btnColoring carouselCardBtns">View "Plant Name"</button>
+                    <h4 class="card-title"><%= data.Plants[0].common_name %></h4>
+                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                      aria-label="View <%= data.Plants[0].common_name %> Button">View
+                      <%= data.Plants[0].common_name %></button>
                   </div>
                 </div>
               </div>
 
               <div class="carouselCards col-sm-12 col-md-12 col-lg-3">
                 <div class="card elementShadow mb-2">
-                  <img class="card-img-top" src="" height="300px" alt="Slide Set 1, Card 2">
+                  <img class="card-img-top" src="<%= data.Plants[1].image_url %>" height="380px"
+                    alt="<%= data.Plants[1].common_name %> Image">
                   <div class="card-body">
-                    <h2 class="card-title">Plant Name</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                      card's content.</p>
-                    <button class="btn text-light btnColoring carouselCardBtns">View "Plant Name"</button>
+                    <h4 class="card-title"><%= data.Plants[1].common_name %></h4>
+                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                      aria-label="View <%= data.Plants[1].common_name %> Button">View
+                      <%= data.Plants[1].common_name %></button>
                   </div>
                 </div>
               </div>
 
               <div class="carouselCards col-sm-12 col-md-12 col-lg-3">
                 <div class="card elementShadow mb-2">
-                  <img class="card-img-top" src="" height="300px" alt="Slide Set 1, Card 3">
+                  <img class="card-img-top" src="<%= data.Plants[2].image_url %>" height="380px"
+                    alt="<%= data.Plants[2].common_name %> Image">
                   <div class="card-body">
-                    <h2 class="card-title">Plant Name</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                      card's content.</p>
-                    <button class="btn text-light btnColoring carouselCardBtns">View "Plant Name"</button>
+                    <h4 class="card-title"><%= data.Plants[2].common_name %></h4>
+                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                      aria-label="View <%= data.Plants[2].common_name %> Button">View
+                      <%= data.Plants[2].common_name %></button>
                   </div>
                 </div>
               </div>
 
               <div class="carouselCards col-sm-12 col-md-12 col-lg-3">
                 <div class="card elementShadow mb-2">
-                  <img class="card-img-top" src="" height="300px" alt="Slide Set 1, Card 3">
+                  <img class="card-img-top" src="<%= data.Plants[3].image_url %>" height="380px"
+                    alt="<%= data.Plants[3].common_name %> Image">
                   <div class="card-body">
-                    <h2 class="card-title">Plant Name</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                      card's content.</p>
-                    <button class="btn text-light btnColoring carouselCardBtns">View "Plant Name"</button>
+                    <h4 class="card-title"><%= data.Plants[3].common_name %></h4>
+                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                      aria-label="View <%= data.Plants[3].common_name %> Button">View
+                      <%= data.Plants[3].common_name %></button>
                   </div>
                 </div>
               </div>
@@ -196,48 +203,52 @@
 
               <div class="carouselCards col-sm-12 col-md-12 col-lg-3">
                 <div class="card elementShadow mb-2">
-                  <img class="card-img-top" src="" height="300px" alt="Slide Set 2, Card 1">
+                  <img class="card-img-top" src="<%= data.Plants[4].image_url %>" height="380px"
+                    alt="<%= data.Plants[4].common_name %> Image">
                   <div class="card-body">
-                    <h2 class="card-title">Plant Name</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                      card's content.</p>
-                    <button class="btn text-light btnColoring carouselCardBtns">View "Plant Name"</button>
+                    <h4 class="card-title"><%= data.Plants[4].common_name %></h4>
+                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                      aria-label="View <%= data.Plants[4].common_name %> Button">View
+                      <%= data.Plants[4].common_name %></button>
                   </div>
                 </div>
               </div>
 
               <div class="carouselCards col-sm-12 col-md-12 col-lg-3">
                 <div class="card elementShadow mb-2">
-                  <img class="card-img-top" src="" height="300px" alt="Slide Set 2, Card 2">
+                  <img class="card-img-top" src="<%= data.Plants[5].image_url %>" height="380px"
+                    alt="<%= data.Plants[5].common_name %> Image">
                   <div class="card-body">
-                    <h2 class="card-title">Plant Name</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                      card's content.</p>
-                    <button class="btn text-light btnColoring carouselCardBtns">View "Plant Name"</button>
+                    <h4 class="card-title"><%= data.Plants[5].common_name %></h4>
+                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                      aria-label="View <%= data.Plants[5].common_name %> Button">View
+                      <%= data.Plants[5].common_name %></button>
                   </div>
                 </div>
               </div>
 
               <div class="carouselCards col-sm-12 col-md-12 col-lg-3">
                 <div class="card elementShadow mb-2">
-                  <img class="card-img-top" src="" height="300px" alt="Slide Set 2, Card 3">
+                  <img class="card-img-top" src="<%= data.Plants[6].image_url %>" height="380px"
+                    alt="<%= data.Plants[6].common_name %> Image">
                   <div class="card-body">
-                    <h2 class="card-title">Plant Name</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                      card's content.</p>
-                    <button class="btn text-light btnColoring carouselCardBtns">View "Plant Name"</button>
+                    <h4 class="card-title"><%= data.Plants[6].common_name %></h4>
+                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                      aria-label="View <%= data.Plants[6].common_name %> Button">View
+                      <%= data.Plants[6].common_name %></button>
                   </div>
                 </div>
               </div>
 
               <div class="carouselCards col-sm-12 col-md-12 col-lg-3">
                 <div class="card elementShadow mb-2">
-                  <img class="card-img-top" src="" height="300px" alt="Slide Set 2, Card 3">
+                  <img class="card-img-top" src="<%= data.Plants[7].image_url %>" height="380px"
+                    alt="<%= data.Plants[7].common_name %> Image">
                   <div class="card-body">
-                    <h2 class="card-title">Plant Name</h2>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                      card's content.</p>
-                    <button class="btn text-light btnColoring carouselCardBtns">View "Plant Name"</button>
+                    <h4 class="card-title"><%= data.Plants[7].common_name %></h4>
+                    <button class="btn text-light btnColoring btn-lg btn-block my-2 carouselCardBtns" role="button"
+                      aria-label="View <%= data.Plants[7].common_name %> Button">View
+                      <%= data.Plants[7].common_name %></button>
                   </div>
                 </div>
               </div>
@@ -246,23 +257,25 @@
 
           </div>
 
-          <div class="controls mb-5">
-            <a class="btn text-light btnColoring mt-2 ml-3" aria-label="Carousel Left" href="#multi-item"
-              data-slide="prev"><i class="fas fa-2x fa-arrow-circle-left"></i></a>
-            <a class="btn text-light btnColoring mt-2 mr-3" aria-label="Carousel Right" href="#multi-item"
-              style="float:right" data-slide="next"><i class="fas fa-2x fa-arrow-circle-right"></i></a>
-          </div>
+          <div class="controls">
+            <a class="btn btn-success mt-2 ml-3" href="#suggestions" role="button"
+              aria-label="Present Previous Slide of Suggestions" data-slide="prev"><i
+                class="fas fa-2x fa-arrow-circle-left"></i></a>
 
+            <a class="btn btn-success mt-2 mr-3" href="#suggestions" role="button"
+              aria-label="Present Next Slide of Suggestions" style="float:right" data-slide="next"><i
+                class="fas fa-2x fa-arrow-circle-right"></i></a>
+          </div>
 
         </div>
       </section>
 
       <!-- TODO: Add this to the credits, resources, footer etc... -->
-      <section class="row d-block">
-        <div class="text-light">Icons made by <a href="http://www.freepik.com/" title="Freepik Link">Freepik</a> from <a
+      <section class="row d-block mt-5 text-light">
+        <div class="titles">Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a
             href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         </div>
-        <div class="text-light">Carousel with card initial framework credited to <a
+        <div class="titles">Carousel with card initial framework credited to <a
             href="https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view">Alessandro Piffero
           </a></div>
       </section>
@@ -271,13 +284,15 @@
     </section>
 
 
-    <script type="text/javascript" src="../javascripts/homepage.js"></script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 
 </body>
