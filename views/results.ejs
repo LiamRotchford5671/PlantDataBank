@@ -10,6 +10,25 @@
 
 </head>
 <body>
-    <h1>hello!</h1>
+
+    <!-- the header and search bar -->
+    <section class="d-flex justify-content-center mb-5">
+        <section class="mainContent">
+    
+          <section class="row mb-5">
+            <div class="col">
+              <div class="card searchStyle">
+                <img class="card-img" src="../images/SearchBackground.jpg" height="300px" alt="Searchbar Img">
+                <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
+                  <div class="input-group input-group-lg">
+                    <div class="input-group-prepend">
+                      <button class="input-group-text" id="searchBtn" onclick="getSearchResults()">Search</button>
+                    </div>
+                    <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 </body>
 </html>
