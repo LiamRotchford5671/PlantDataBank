@@ -24,7 +24,6 @@ router.get('/', function (req, res) {
 });
 
 //API Search Bar results page
-//TODO: API gathers 30 results at a time, so results page will need to have a next button to call the next page of data
 router.get('/results', async (req, res) => {
 
   const queryObject = url.parse(req.url, true).query;
