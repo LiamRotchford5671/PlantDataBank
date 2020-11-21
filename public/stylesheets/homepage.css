@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font-family: "Times New Roman", Times, serif;
-  background-color: #383838;
+  background-color: #ffffff;
 }
 
 .rowSpacing {
@@ -56,7 +56,7 @@ body {
 
 .navbar-brand{
   font-size: 3.5rem;
-  color: white;
+  color: #808080;
   font-weight: bold;
   display: inline-block;
 }
@@ -71,8 +71,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-content: center;
-  margin: auto;
+  margin: 0;
   z-index: 1;
+  font-family: lato;
+  height: 6rem;
 }
 
 .navbar-items{
@@ -90,7 +92,8 @@ body {
 }
 
 .nav-link {
-  color: white;
+  color: #6a6a6a;
+  border-radius: 10px;
 }
 
 .card-img{
@@ -167,5 +170,5 @@ button:active,
 }
 
 .credit-text{
-  color: white;
+  color: #6c6b6b;
 }
