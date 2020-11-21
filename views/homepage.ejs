@@ -14,18 +14,26 @@
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
   <link rel='stylesheet' href='/stylesheets/homepage.css' />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
 
 </head>
+<nav class="navbar">
+  <a class="navbar-brand"  href="/"><img class="logo" src="../Icons/leaves.png" alt="" />Plant Bank</a>
+    <ul class="navbar-items">
+      <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+    </ul>
+</nav>
 
 <body>
-
   <section class="d-flex justify-content-center mb-5">
     <section class="mainContent">
 
       <section class="row mb-5">
         <div class="col">
           <div class="card searchStyle">
-            <img class="card-img" src="../images/SearchBackground.jpg" height="300px" alt="Searchbar Img">
+            <img class="card-img" src="../images/SearchBackground.jpg">
             <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
               <div class="input-group input-group-lg">
                 <div class="input-group-prepend">
@@ -285,14 +293,14 @@
       </section>
 
       <!-- TODO: Add this to the credits, resources, footer etc... -->
-      <section class="row d-block mt-5 text-light">
-        <div class="titles">Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a
-            href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-        </div>
-        <div class="titles">Carousel with card initial framework credited to <a
-            href="https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view">Alessandro Piffero
-          </a></div>
-      </section>
+      </br>
+      </br>
+      </br>
+      <hr class="gap-line">
+      <div class="credits" font-size="small">
+        <p class="credit-text">Icons made by <a class="credit-link" href="http://www.freepik.com/">Freepik</a>. </p>
+        <p class="credit-text">Carousel with card initial framework credited to <a class="credit-link" href="https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view">Alessandro Piffero</a>. </p>
+      </div>
 
 
     </section>
@@ -309,7 +317,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
-
+  </section>
 </body>
 
 </html>

@@ -24,6 +24,11 @@ router.get('/', function (req, res) {
   res.end();
 });
 
+router.get('/about', function(req,res){
+  res.render('about');
+  res.end();
+});
+
 /* GET Results Page */
 /* Handles SearchBar, and Genus Category Search Results */
 router.get('/results', async (req, res) => {
