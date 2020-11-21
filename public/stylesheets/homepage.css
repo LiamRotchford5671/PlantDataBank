@@ -1,7 +1,7 @@
 body {
   padding: 50px;
   font-family: "Times New Roman", Times, serif;
-  background-color: #383838;
+  background-color: #ffffff;
 }
 
 .rowSpacing {
@@ -34,6 +34,72 @@ body {
 .carouselCardBtns {
   float: right;
 }
+
+/*.navbar-brand{*/
+/*  font-size: x-large;*/
+/*  color: #FFF;*/
+/*  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+/*}*/
+
+/*.nav-link {*/
+/*  font-size: large;*/
+/*  color: #FFF;*/
+/*  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+/*}*/
+.logo {
+  padding-top: 0px;
+  padding-bottom: 12px;
+  width: 70px;
+  height: auto;
+  padding-right: 10px;
+}
+
+.navbar-brand{
+  font-size: 3.5rem;
+  color: #808080;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.body {
+  padding: 0;
+}
+
+.navbar {
+  width: 100%;
+  /*min-height: 10vh;*/
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  margin: 0;
+  z-index: 1;
+  font-family: lato;
+  height: 6rem;
+}
+
+.navbar-items{
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-link {
+  color: #6a6a6a;
+  border-radius: 10px;
+}
+
+.card-img{
+  max-width: 100%;
+}
+
 
 /* Accessibility States */
 button:hover,
@@ -88,4 +154,21 @@ button:active,
   .card-text {
     font-size: 1rem;
   }
+}
+
+.gap-line {
+  width: 90%;
+  background: #6c6b6b;
+}
+
+.credits {
+  text-align: center;
+}
+
+.credit-link {
+  color: #5496d7;
+}
+
+.credit-text{
+  color: #6c6b6b;
 }
