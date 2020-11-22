@@ -34,7 +34,7 @@ router.get('/results', async (req, res) => {
 
   if (determine == 'genus') {
     let genusObj = await axois.get(urlAPI + 'genus/' + searchStr + '/plants?token=' + token + '&genus=' + searchStr)
-      //.then(resp => console.log(resp.data))
+      .then(resp => console.log(resp.data))
       .catch(err => console.error(err));
 
     res.render('results', {
@@ -42,7 +42,7 @@ router.get('/results', async (req, res) => {
     });
   } else {
     let searchObj = await axois.get(urlAPI + 'plants/search?token=' + token + '&q=' + searchStr)
-      //.then(resp => console.log(resp.data))
+      .then(resp => console.log(resp.data))
       .catch(err => console.error(err));
 
     res.render('results', {
@@ -58,7 +58,7 @@ router.get('/results', async (req, res) => {
 router.get('/plantInformation', async (req, res) => {
 
   const queryObject = url.parse(req.url, true).query;
-  let plantStr = Object.values(queryObject);;
+  let plantStr = Object.values(queryObject);
 
   let plantObj = await axois.get(urlAPI + 'plants/' + plantStr + '?token=' + token)
     .then(resp => console.log(resp.data))
