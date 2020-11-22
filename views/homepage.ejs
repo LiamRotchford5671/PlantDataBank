@@ -30,24 +30,27 @@
 
 
 <body>
-  <section class="d-flex justify-content-center mb-5">
-    <section class="mainContent">
+  <!--search bar area-->
 
-      <section class="row mb-5">
-        <div class="col">
-          <div class="card searchStyle">
-            <img class="card-img" src="../images/SearchBackground.jpg">
-            <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
-              <div class="input-group input-group-lg">
-                <div class="input-group-prepend">
-                  <button class="input-group-text" id="searchBtn" onclick="getSearchResults()">Search</button>
-                </div>
-                <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
-              </div>
+
+  <section class="row mb-5">
+    <div class="col">
+      <div class="card searchStyle">
+        <img class="card-img" src="../images/back-img.png">
+        <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
+          <div class="input-group input-group-lg input-group-append">
+            <div class="input-group-append">
+              <button class="input-group-text" id="searchBtn" onclick="getSearchResults()">Search</button>
             </div>
+            <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="homeContent d-flex justify-content-center mb-5">
+    <section class="mainContent">
 
       <section class="row justify-content-center rowSpacing mb-1">
         <h1 class="text-dark">
@@ -304,9 +307,8 @@
         <p class="credit-text">Icons made by <a class="credit-link" href="http://www.freepik.com/">Freepik</a>. </p>
         <p class="credit-text">Carousel with card initial framework credited to <a class="credit-link" href="https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view">Alessandro Piffero</a>. </p>
       </div>
-
-
     </section>
+
 
 
     <script type="text/javascript" src="../javascripts/homepage.js"></script>

@@ -1,7 +1,11 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font-family: "Times New Roman", Times, serif;
   background-color: #ffffff;
+}
+
+.homeContent{
+  padding: 50px;
 }
 
 .rowSpacing {
@@ -9,8 +13,22 @@ body {
 }
 
 .searchStyle {
-  background-color: #383838;
-  box-shadow: 0 -2px 30px#9e9e9e;
+  background-color: #58c1bc;
+  border-style: none;
+  /*box-shadow: 0 -2px 30px#9e9e9e;*/
+}
+
+#searchBtn {
+  border-radius: 5px;
+}
+
+
+
+.card-img{
+  width: 960px;
+  height: auto;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .elementShadow {
@@ -46,6 +64,7 @@ body {
 /*  color: #FFF;*/
 /*  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
 /*}*/
+
 .logo {
   padding-top: 0px;
   padding-bottom: 12px;
@@ -56,9 +75,11 @@ body {
 
 .navbar-brand{
   font-size: 3.5rem;
-  color: #808080;
+  color: #028602;
   font-weight: bold;
   display: inline-block;
+  background-position: right;
+  background-blend-mode: color;
 }
 
 .body {
@@ -68,12 +89,13 @@ body {
 .navbar {
   width: 100%;
   /*min-height: 10vh;*/
+  padding: 0 0;
   display: flex;
   justify-content: space-between;
   align-content: center;
   margin: 0;
   z-index: 1;
-  font-family: lato;
+  font-family: lato, serif;
   height: 6rem;
 }
 
@@ -96,8 +118,8 @@ body {
   border-radius: 10px;
 }
 
-.card-img{
-  max-width: 100%;
+.input-group {
+  width: 50%;
 }
 
 
