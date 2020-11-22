@@ -13,7 +13,7 @@ body {
 }
 
 .searchStyle {
-  background-color: #58c1bc;
+  background-color: #ffffff;
   border-style: none;
   /*box-shadow: 0 -2px 30px#9e9e9e;*/
 }
@@ -22,13 +22,18 @@ body {
   border-radius: 5px;
 }
 
-
+.btn-success {
+  color: #fff;
+  background-color: #85cdca;
+  border: none;
+}
 
 .card-img{
   width: 960px;
   height: auto;
   margin-left: auto;
   margin-right: 0;
+  background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
 }
 
 .elementShadow {
@@ -45,8 +50,8 @@ body {
 }
 
 .btnColoring {
-  background-color: #008500;
-  border-color: #008500;
+  background-color: #85cdca;
+  border: none;
 }
 
 .carouselCardBtns {
@@ -75,7 +80,7 @@ body {
 
 .navbar-brand{
   font-size: 3.5rem;
-  color: #028602;
+  color: #41b4a3;
   font-weight: bold;
   display: inline-block;
   background-position: right;
@@ -132,8 +137,7 @@ button:focus {
 
 .btn:hover,
 .btn:focus {
-  background-color: #69d500;
-  border-color: #69d500;
+  background-color: #418f8b;
 }
 
 button:active,
