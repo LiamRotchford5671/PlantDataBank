@@ -11,7 +11,7 @@ Utilizing the [Trefle](https://trefle.io) api; create a minimalisic, simple, and
 
 ### To Run Project Locally:
 
-1. Be sure to have the following installed: [NodeJs](https://nodejs.org/en/), [Express Framework](https://expressjs.com/), [Npm](https://www.npmjs.com/get-npm), [Nodemon Npm Package](https://www.npmjs.com/package/nodemon), & [Axios Npm Package](https://www.npmjs.com/package/axios)
+1. Be sure to have the following installed: [NodeJs](https://nodejs.org/en/), [Express](https://expressjs.com/), [Npm](https://www.npmjs.com/get-npm), [Nodemon](https://www.npmjs.com/package/nodemon), & [Axios](https://www.npmjs.com/package/axios)
 
 2. Run the project web server with:
     nodemon start
