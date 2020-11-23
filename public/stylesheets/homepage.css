@@ -12,6 +12,10 @@ body {
   margin-top: 8em;
 }
 
+a:hover {
+  color: #418f8b;
+}
+
 .searchStyle {
   background-color: #ffffff;
   border-style: none;
@@ -139,6 +143,7 @@ button:focus {
 .btn:focus {
   background-color: #418f8b;
 }
+
 
 button:active,
 .btn:active {
