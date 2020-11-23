@@ -38,7 +38,7 @@ router.get('/results', async (req, res) => {
       .catch(err => console.error(err));
 
     res.render('results', {
-      data: genusObj
+      data: genusObj.data
     });
   } else {
     let searchObj = await axois.get(urlAPI + 'plants/search?token=' + token + '&q=' + searchStr)
@@ -46,7 +46,7 @@ router.get('/results', async (req, res) => {
       .catch(err => console.error(err));
 
     res.render('results', {
-      data: searchObj
+      data: searchObj.data
     });
   }
 
