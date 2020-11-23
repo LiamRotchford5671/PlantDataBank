@@ -33,19 +33,41 @@
 
           <!-- <section>
             <p>
-               result_name();
+        result_name();
             </p>
           </section> -->
-          <section>
-            <div class="container shadow p-3 mb-5 bg-white rounded p-5 my-5 bg-white text-black">
-                <h1>Result #2</h1>
-                <p>This container has a dark background color and a white text, and some extra padding and margins.</p>
+          <section class="result_list">
+            
+          <%for(var i = 0; i < data.length; i ++){
+            %>
 
-                <p><%= data[0].common_name %></p>
+            <%if (data[i].common_name) { %>
 
-              </div>
-              
-          </section>
+            <div class="container-lg shadow p-2 mb-3 bg-white rounded p-5 my-5 bg-white text-black">
+              <div class="plant">
+                <h1 class="plant_name">
+                  <%= data[i].common_name %>
+                </h1>
+                <div class="plant_image">
+                  <img class="plant_item" src="<%= data[i].image_url %>" height="200px" alt="<%= data[i].common_name %>Image">
+                </div>
+            </div>
+          </div>
+
+          <% } 
+          else {%>
+          <p>
+            <%= data[i].slug %>
+          </p>
+          <% } %>
+
+
+
+            <% 
+          } 
+          %>
+          
+        </section>
 
           <script type="text/javascript" src="../javascripts/results.js"></script>
 

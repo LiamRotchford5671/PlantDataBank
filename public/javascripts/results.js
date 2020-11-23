@@ -1,4 +1,9 @@
 
+const plantButton = document.getElementById("resultButton");
+
+plantButton.addEventListener('click', event => {
+    window.location.href = 'plantInformation?plant=' + plantButton.value;
+});
 
 
 // function result_name(){
@@ -30,7 +35,4 @@
 //  });
 // }
  
-// server.listen(port, () => {
-//     console.log(`Server running at http://localhost:${port}`);
-// });
 
