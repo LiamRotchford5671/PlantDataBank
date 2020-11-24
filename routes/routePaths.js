@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
+const path = require('path');
 const axios = require('axios');
 const url = require('url');
 const fs = require('fs');
@@ -9,7 +10,7 @@ const fs = require('fs');
 const token = process.env.API_TOKEN;
 const urlAPI = 'https://trefle.io/api/v1/';
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')));
 
 /* GET Homepage Page */
 /* Handles Suggestion Cards */
@@ -24,44 +25,106 @@ router.get('/', function (req, res) {
   res.end();
 });
 
-router.get('/about', function(req,res){
-  res.render('about');
-  res.end();
-});
-
-router.get('/singleResult', function(req,res){
-  res.render('singleResult');
-  res.end();
-});
-
-/* GET Results Page */
-/* Handles SearchBar, and Genus Category Search Results */
-router.get('/results', async (req, res) => {
+/* GET SearchResults Page */
+/* Handles SearchBar Results */
+router.get('/searchResults', async (req, res) => {
 
   const queryObject = url.parse(req.url, true).query;
   let determine = Object.keys(queryObject);
-  let searchStr = Object.values(queryObject);;
+  let searchStr = Object.values(queryObject);
 
-  if (determine == 'genus') {
-    let genusObj = await axios.get(urlAPI + 'genus/' + searchStr + '/plants?token=' + token + '&genus=' + searchStr)
-      //.then(resp => console.log(resp.data.data))
-      .catch(err => console.error(err));
-
-    res.render('results', {
-      data: genusObj.data.data
-    });
-  } else {
-    let searchObj = await axios.get(urlAPI + 'plants/search?token=' + token + '&q=' + searchStr)
+  if (determine[0] == 'search') {
+    let searchObj = await axios.get(urlAPI + 'plants/search?token=' + token + '&q=' + searchStr[0])
       //.then(resp => console.log(resp.data))
       .catch(err => console.error(err));
 
-    res.render('results', {
-      data: searchObj.data.data
+    res.render('searchResults', {
+      results: searchObj.data.data,
+      count: 1
     });
+  } else if (determine[0] == 'nextSearchPage') { //Api returns 20 results at a time, this handles getting thet next set of results
+    const queryObject = url.parse(req.url, true).query;
+    let searchStr = Object.values(queryObject);
+
+    let check = await axios.get(urlAPI + 'plants/search?token=' + token + '&q=' + searchStr[0])
+      //.then(resp => console.log(resp.data))
+      .catch(err => console.error(err));
+
+    let destruct1 = check.data.links.last.split('?');
+    let destruct2 = destruct1[1].split('&');
+    let lastPage = destruct2[0].split('=');
+
+    if (searchStr[1] <= lastPage[1]) {
+      let nextResults = await axios.get(urlAPI + '/plants/search?token=' + token + '&q=' + searchStr[0] + '&page=' + searchStr[1])
+        //.then(resp => console.log(resp.data.data))
+        .catch(err => console.error(err));
+
+      res.render('searchResults', {
+        results: nextResults.data.data,
+        count: searchStr[1]
+      });
+
+    } else {
+      res.render('searchResults', {
+        results: false,
+        count: 1
+      });
+    }
+  } else {
+    res.render('error');
   }
 
   res.end();
 });
+
+/* GET GenusResults Page */
+/* Handles Genus Category Results */
+router.get('/genusResults', async (req, res) => {
+
+  const queryObject = url.parse(req.url, true).query;
+  let determine = Object.keys(queryObject);
+  let searchStr = Object.values(queryObject);
+
+  if (determine[0] == 'genus') {
+    let genusObj = await axios.get(urlAPI + 'genus/' + searchStr[0] + '/plants?token=' + token + '&genus=' + searchStr[0])
+      //.then(resp => console.log(resp.data.data))
+      .catch(err => console.error(err));
+
+    res.render('genusResults', {
+      results: genusObj.data.data,
+      count: 1
+    });
+
+  } else if (determine[0] == 'nextGenusPage') { //Api returns 20 results at a time, this handles getting thet next set of results
+    const queryObject = url.parse(req.url, true).query;
+    let searchStr = Object.values(queryObject);
+
+    let check = await axios.get(urlAPI + 'genus/' + searchStr[0] + '/plants?token=' + token + '&genus=' + searchStr[0])
+      //.then(resp => console.log(resp.data.data))
+      .catch(err => console.error(err));
+
+    if (searchStr[1] <= check.data.links.last.slice(-1)) {
+      let nextResults = await axios.get(urlAPI + '/plants?token=' + token + '&genus=' + searchStr[0] + '&page=' + searchStr[1])
+        //.then(resp => console.log(resp.data.data))
+        .catch(err => console.error(err));
+
+      res.render('genusResults', {
+        results: nextResults.data.data,
+        count: searchStr[1]
+      });
+    } else {
+      res.render('genusResults', {
+        results: false,
+        count: 1
+      });
+    }
+  } else {
+    res.render('error');
+  }
+
+  res.end();
+});
+
 
 /* GET PlantInformation Page */
 /* Handles Suggestion Cards and Results Page Plant options */
@@ -71,7 +134,7 @@ router.get('/plantInformation', async (req, res) => {
   let plantStr = Object.values(queryObject);
 
   let plantObj = await axios.get(urlAPI + 'plants/' + plantStr + '?token=' + token)
-    .then(resp => console.log(resp.data))
+    //.then(resp => console.log(resp.data.data))
     .catch(err => console.error(err));
 
   res.render('plantInformation', {
