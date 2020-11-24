@@ -6,6 +6,13 @@ plantButton.addEventListener('click', event => {
 });
 
 
+
+
+// function capFirst(string){
+//     return string.charAt(0).toUpperCase() + string.slice(1);
+// }
+
+
 // function result_name(){
 // const http = require('http'); 
 // const url = require('url'); 

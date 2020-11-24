@@ -12,7 +12,20 @@ body {
     height: 250px
   }
 
-   
+
+  table, th, td{
+
+    border: solid white;
+  }
+
+  #result_list img{
+
+    /* display:block; */
+    width: 15%;
+    height: 15%;
+  }
+
+
   /* Media Queries */
   
   /* Small devices (landscape phones, 544px and up) */
