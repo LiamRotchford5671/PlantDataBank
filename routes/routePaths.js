@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
+const path = require('path');
 const axios = require('axios');
 const url = require('url');
 const fs = require('fs');
@@ -9,7 +10,7 @@ const fs = require('fs');
 const token = process.env.API_TOKEN;
 const urlAPI = 'https://trefle.io/api/v1/';
 
-app.use(express.static('public'))
+app.use(express.static(path.join(__dirname, 'public')));
 
 /* GET Homepage Page */
 /* Handles Suggestion Cards */
@@ -38,17 +39,12 @@ router.get('/searchResults', async (req, res) => {
       .catch(err => console.error(err));
 
     res.render('searchResults', {
-      data: {
-        results: searchObj.data.data,
-        count: 1
-      }
+      results: searchObj.data.data,
+      count: 1
     });
   } else if (determine[0] == 'nextSearchPage') { //Api returns 20 results at a time, this handles getting thet next set of results
     const queryObject = url.parse(req.url, true).query;
     let searchStr = Object.values(queryObject);
-
-    //console.log(determine);
-    //console.log(searchStr);
 
     let check = await axios.get(urlAPI + 'plants/search?token=' + token + '&q=' + searchStr[0])
       //.then(resp => console.log(resp.data))
@@ -64,20 +60,18 @@ router.get('/searchResults', async (req, res) => {
         .catch(err => console.error(err));
 
       res.render('searchResults', {
-        data: {
-          results: nextResults.data.data,
-          count: searchStr[1]
-        }
+        results: nextResults.data.data,
+        count: searchStr[1]
       });
 
     } else {
       res.render('searchResults', {
-        data: {
-          results: false,
-          count: 1
-        }
+        results: false,
+        count: 1
       });
     }
+  } else {
+    res.render('error');
   }
 
   res.end();
@@ -97,17 +91,13 @@ router.get('/genusResults', async (req, res) => {
       .catch(err => console.error(err));
 
     res.render('genusResults', {
-      data: {
-        results: genusObj.data.data,
-        count: 1
-      }
+      results: genusObj.data.data,
+      count: 1
     });
+
   } else if (determine[0] == 'nextGenusPage') { //Api returns 20 results at a time, this handles getting thet next set of results
     const queryObject = url.parse(req.url, true).query;
     let searchStr = Object.values(queryObject);
-
-    //console.log(determine);
-    //console.log(searchStr);
 
     let check = await axios.get(urlAPI + 'genus/' + searchStr[0] + '/plants?token=' + token + '&genus=' + searchStr[0])
       //.then(resp => console.log(resp.data.data))
@@ -119,19 +109,17 @@ router.get('/genusResults', async (req, res) => {
         .catch(err => console.error(err));
 
       res.render('genusResults', {
-        data: {
-          results: nextResults.data.data,
-          count: searchStr[1]
-        }
+        results: nextResults.data.data,
+        count: searchStr[1]
       });
     } else {
       res.render('genusResults', {
-        data: {
-          results: false,
-          count: 1
-        }
+        results: false,
+        count: 1
       });
     }
+  } else {
+    res.render('error');
   }
 
   res.end();
@@ -146,7 +134,7 @@ router.get('/plantInformation', async (req, res) => {
   let plantStr = Object.values(queryObject);
 
   let plantObj = await axios.get(urlAPI + 'plants/' + plantStr + '?token=' + token)
-    //.then(resp => console.log(resp.data))
+    //.then(resp => console.log(resp.data.data))
     .catch(err => console.error(err));
 
   res.render('plantInformation', {
