@@ -35,18 +35,18 @@
 // }
 
 
-const nextBtn = document.getElementById("nextBtn");
+const nextGenusBtn = document.getElementById("nextGenusBtn");
 
-nextBtn.addEventListener('click', event => {
+nextGenusBtn.addEventListener('click', event => {
     let query = window.location.search.substring(1).split('?');
     let destruct = query[0].split('&');
     let searchStr = destruct[0].split('=');
-    let pageNum = nextBtn.value;
+    let pageNum = nextGenusBtn.value;
 
     if (pageNum !== 'reset') {
         pageNum++;
-        window.location.href = 'results?nextGenusPage=' + searchStr[1] + '&page=' + pageNum;
+        window.location.href = 'genusResults?nextGenusPage=' + searchStr[1] + '&page=' + pageNum;
     } else {
-        window.location.href = 'results?genus=abies';
+        window.location.href = 'genusResults?genus=' + searchStr[1];
     }
 });
