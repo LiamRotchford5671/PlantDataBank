@@ -24,40 +24,66 @@ router.get('/', function (req, res) {
   res.end();
 });
 
-router.get('/about', function(req,res){
-  res.render('about');
-  res.end();
-});
-
-router.get('/singleResult', function(req,res){
-  res.render('singleResult');
-  res.end();
-});
-
 /* GET Results Page */
 /* Handles SearchBar, and Genus Category Search Results */
 router.get('/results', async (req, res) => {
 
   const queryObject = url.parse(req.url, true).query;
   let determine = Object.keys(queryObject);
-  let searchStr = Object.values(queryObject);;
+  let searchStr = Object.values(queryObject);
 
-  if (determine == 'genus') {
-
-    let genusObj = await axios.get(urlAPI + 'genus/' + searchStr + '/plants?token=' + token + '&genus=' + searchStr)
+  if (determine[0] == 'genus') {
+    let genusObj = await axios.get(urlAPI + 'genus/' + searchStr[0] + '/plants?token=' + token + '&genus=' + searchStr[0])
       //.then(resp => console.log(resp.data.data))
       .catch(err => console.error(err));
 
     res.render('results', {
-      data: genusObj.data.data
+      data: {
+        results: genusObj.data.data,
+        count: 1
+      }
     });
+  } else if (determine[0] == 'nextGenusPage') {
+    const queryObject = url.parse(req.url, true).query;
+    let searchStr = Object.values(queryObject);
+
+    //console.log(determine);
+    //console.log(searchStr);
+
+    let check = await axios.get(urlAPI + 'genus/' + searchStr[0] + '/plants?token=' + token + '&genus=' + searchStr[0])
+      //.then(resp => console.log(resp.data.data))
+      .catch(err => console.error(err));
+
+    if (searchStr[1] <= check.data.links.last.slice(-1)) {
+      let nextResults = await axios.get(urlAPI + '/plants?token=' + token + '&genus=' + searchStr[0] + '&page=' + searchStr[1])
+        //.then(resp => console.log(resp.data.data))
+        .catch(err => console.error(err));
+
+      res.render('results', {
+        data: {
+          results: nextResults.data.data,
+          count: searchStr[1]
+        }
+      });
+    } else {
+      res.render('results', {
+        data: {
+          results: false,
+          count: 1
+        }
+      });
+    }
+
   } else {
-    let searchObj = await axios.get(urlAPI + 'plants/search?token=' + token + '&q=' + searchStr)
+    let searchObj = await axios.get(urlAPI + 'plants/search?token=' + token + '&q=' + searchStr[0])
       //.then(resp => console.log(resp.data))
       .catch(err => console.error(err));
 
     res.render('results', {
-      data: searchObj.data.data
+      data: {
+        results: searchObj.data.data,
+        count: 1
+      }
     });
   }
 
@@ -72,7 +98,7 @@ router.get('/plantInformation', async (req, res) => {
   let plantStr = Object.values(queryObject);
 
   let plantObj = await axios.get(urlAPI + 'plants/' + plantStr + '?token=' + token)
-    .then(resp => console.log(resp.data))
+    //.then(resp => console.log(resp.data))
     .catch(err => console.error(err));
 
   res.render('plantInformation', {
