@@ -1,82 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <title>Results</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta charset="UTF-8">
-      <meta name="description" content="Plants will be retrieved from utilizing the Trefle.io plant API">
-      <meta name="keywords" content="EJS, CSS, JavaScript, Express (Node), Bootstrap, Font Awesome">
-      <meta name="author" content="Yan Li">
- 
-      <script src="https://kit.fontawesome.com/31a00af4ac.js" crossorigin="anonymous"></script>
 
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
-        crossorigin="anonymous"
-      />
+<head>
+  <title>Results</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="description" content="Plants will be retrieved from utilizing the Trefle.io plant API">
+  <meta name="keywords" content="EJS, CSS, JavaScript, Express (Node), Bootstrap, Font Awesome">
+  <meta name="author" content="Yan Li">
 
-    <!-- added UNPKG bootstrp table link -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css"
-    />
+  <script src="https://kit.fontawesome.com/31a00af4ac.js" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="/stylesheets/result.css" />
-  </head>
-  <body>
-    <!-- the header and search bar -->
-    <section class="d-flex justify-content-center mb-5">
-      <section class="mainContent">
-        <section class="row mb-5">
-          <div class="col">
-            <div class="card searchStyle">
-              <img
-                class="card-img"
-                src="../images/SearchBackground.jpg"
-                height="300px"
-                alt="Searchbar Img"
-              />
-              <div
-                class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12"
-              >
-                <div class="input-group input-group-lg">
-                  <div class="input-group-prepend">
-                    <button
-                      class="input-group-text"
-                      id="searchBtn"
-                      onclick="getSearchResults()"
-                    >
-                      Search
-                    </button>
-                  </div>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="searchInp"
-                    aria-label="SearchBar"
-                  />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
+
+  <!-- added UNPKG bootstrp table link -->
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.css" />
+
+  <link rel="stylesheet" href="/stylesheets/result.css" />
+</head>
+
+<body>
+  <!-- the header and search bar -->
+  <section class="d-flex justify-content-center mb-5">
+    <section class="mainContent">
+      <section class="row mb-5">
+        <div class="col">
+          <div class="card searchStyle">
+            <img class="card-img" src="../images/SearchBackground.jpg" height="300px" alt="Searchbar Img" />
+            <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
+              <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                  <button class="input-group-text" id="searchBtn" onclick="getSearchResults()">
+                    Search
+                  </button>
                 </div>
+                <input type="text" class="form-control" id="searchInp" aria-label="SearchBar" />
               </div>
             </div>
           </div>
-        </section>
+        </div>
       </section>
     </section>
+  </section>
 
-    <!-- <section>
+  <!-- <section>
             <p>
         result_name();
             </p>
           </section> -->
-    <!--Result listing-->
+  <!--Result listing-->
 
-    <table
-      id="result_list"
-      data-toggle="table"
-      data-search="true"
-      data-show-columns="true"
-    >
-      <!-- <thead>
+  <table id="result_list" data-toggle="table" data-search="true" data-show-columns="true">
+    <!-- <thead>
                   <tr class="tr-class">
                     <td>
                        <th data-field="name" data-valign="middle">Name</th>
@@ -86,113 +62,88 @@
                     </td>
                   </tr>
                 </thead>   -->
-      <tbody>
-        <%for(var i = 0; i < data.length; i ++){ %> 
-        
-        <%if (data[i].common_name) {
+    <tbody>
+      <%for(var i = 0; i < data.length; i ++){ %>
+
+      <%if (data[i].common_name) {
         %>
-        <tr
-          id="tr-id-1"
-          class="tr-class-1"
-          data-title="bootstrap table"
-          data-object='{"key": "value"}'
-        >
-          <td id="td-id-1" class="td-class-1" data-title="bootstrap table">
-            <div class="plant_image">
-              <img
-                class="plant_item"
-                src="<%= data[i].image_url %>"
-                height="200px"
-                alt="<%= data[i].common_name %>Image"
-              />
-            </div>
-          </td>
+      <tr id="tr-id-1" class="tr-class-1" data-title="bootstrap table" data-object='{"key": "value"}'>
+        <td id="td-id-1" class="td-class-1" data-title="bootstrap table">
 
-          <td id="td-id-1" class="td-class-1" data-title="bootstrap table">
-            <div class="plant">
-              <h3 class="plant_name"><%= data[i].common_name %></h3>
-            </div>
+          <div class="plant_image col-sm-12 col-md-12 col-lg-3">
+            <img class="plant_item" src="<%= data[i].image_url %>" height="300px"
+              alt="<%= data[i].common_name %>Image" />
+          </div>
+        </td>
 
-            <div>
-              <button
-                id="resultButton"
-                class="btn text-light btnColoring btn-lg mb-3"
-                aria-label="view item detail"
-                role="button"
-                aria-pressed="true"
-              >
-                View Detail
-              </button>
-            </div>
-          </td>
-        </tr>
 
-        <% } else {%>
-        <tr
-          id="tr-id-1"
-          class="tr-class-1"
-          data-title="bootstrap table"
-          data-object='{"key": "value"}'
-        >
-          <td id="td-id-1" class="td-class-1" data-title="bootstrap table"></td>
 
-          <td>
-            <div class="plant_image">
-              <img
-                class="plant_item"
-                src="<%= data[i].image_url %>"
-                height="200px"
-                alt="<%= data[i].slug %>Image"
-              />
-            </div>
-          </td>
 
-          <td id="td-id-1" class="td-class-1" data-title="bootstrap table">
-            <div class="plant">
-              <h3 class="plant_name">
-                <p style="text-transform: capitalize"><%= (data[i].slug) %></p>
-              </h3>
-            </div>
 
-            <div>
-              <button
-                id="resultButton"
-                class="btn text-light btnColoring btn-lg mb-3"
-                aria-label="view item detail"
-                role="button"
-                aria-pressed="true"
-              >
-                View Detail
-              </button>
-            </div>
-          </td>
-        </tr>
 
-        <% } %> <% } %>
-      </tbody>
-    </table>
 
-    <nav aria-label="Page navigation example">
-      <ul class="pagination justify-content-end">
-        <li class="each_page_link">
-          <a class="page_link" href="#" tabindex="-1">Previous</a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item">
-          <a class="page_link" href="#">Next</a>
-        </li>
-      </ul>
-    </nav>
+        <td id="td-id-1" class="td-class-1" data-title="bootstrap table">
+          <div class="plant">
+            <h3 class="plant_name"><%= data[i].common_name %></h3>
+          </div>
 
-    <script type="text/javascript" src="../javascripts/results.js"></script>
+          <div>
+            <button id="resultButton" class="btn text-light btnColoring btn-lg mb-3" 
+             role="button" value="<%= data[i].common_name %>" aria-label="View Detail">View Detail</button>
+          </div>
+        </td>
+      </tr>
 
-    //table js links from doc
+      <% } else {%>
+      <tr id="tr-id-1" class="tr-class-1" data-title="bootstrap table" data-object='{"key": "value"}'>
+        <td id="td-id-1" class="td-class-1" data-title="bootstrap table"></td>
 
-    <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table-locale-all.min.js"></script>
-    <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
-  </body>
+        <td>
+          <div class="plant_image col-sm-12 col-md-12 col-lg-3">
+            <img class="plant_item" src="<%= data[i].image_url %>" height="300px" alt="<%= data[i].slug %>Image" />
+          </div>
+        </td>
+
+        <td id="td-id-1" class="td-class-1" data-title="bootstrap table">
+          <div class="plant">
+            <h3 class="plant_name">
+              <p style="text-transform: capitalize"><%= (data[i].slug) %></p>
+            </h3>
+          </div>
+
+          <div>
+            <button id="resultButton" class="btn text-light btnColoring btn-lg mb-3" 
+              role="button"  value="<%= data[i].slug %>" aria-label="View Detail">View Detail</button>
+          </div>
+        </td>
+      </tr>
+
+      <% } %> <% } %>
+    </tbody>
+  </table>
+
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-end">
+      <li class="each_page_link">
+        <a class="page_link" href="#" tabindex="-1">Previous</a>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page_link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+  <script type="text/javascript" src="../javascripts/results.js"></script>
+
+  //table js links from doc
+
+  <script src="https://unpkg.com/tableexport.jquery.plugin/tableExport.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/bootstrap-table-locale-all.min.js"></script>
+  <script src="https://unpkg.com/bootstrap-table@1.18.0/dist/extensions/export/bootstrap-table-export.min.js"></script>
+</body>
+
 </html>

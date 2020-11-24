@@ -53,7 +53,7 @@ router.get('/results', async (req, res) => {
     });
   } else {
     let searchObj = await axios.get(urlAPI + 'plants/search?token=' + token + '&q=' + searchStr)
-      //.then(resp => console.log(resp.data))
+      .then(resp => console.log(resp.data))
       .catch(err => console.error(err));
 
     res.render('results', {
@@ -72,7 +72,7 @@ router.get('/plantInformation', async (req, res) => {
   let plantStr = Object.values(queryObject);
 
   let plantObj = await axios.get(urlAPI + 'plants/' + plantStr + '?token=' + token)
-    //.then(resp => console.log(resp.data))
+   // .then(resp => console.log(resp.data))
     .catch(err => console.error(err));
 
   res.render('plantInformation', {
