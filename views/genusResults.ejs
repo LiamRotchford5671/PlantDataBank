@@ -38,7 +38,9 @@
             <% } else { %>
             <td> <%= results[i].scientific_name %> </td>
             <% } %>
-            <td> <button class="btn btn-primary" value="<%= results[i].slug %>Btn">Details</button> </td>
+            <td> <button class="btn btn-primary" onclick="getDetails('<%= results[i].slug %>')">Plant
+                Details</button>
+            </td>
           </tr>
           <% } %>
         </tbody>
@@ -53,9 +55,9 @@
       <% } %>
 
       <% if (results) { %>
-      <button id="nextGenusBtn" class="btn btn-primary" role="button" value="<%=%>">Next</button>
+      <button id="nextGenusBtn" class="btn btn-primary" role="button" value="<%= count %>">Next</button>
       <% } else { %>
-      <button id=" nextGenusBtn" class="btn btn-primary" role="button" value="reset">First Page</button>
+      <button id="nextGenusBtn" class="btn btn-primary" role="button" value="reset">First Page</button>
       <% } %>
 
     </section>

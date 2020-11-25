@@ -35,8 +35,8 @@ router.get('/searchResults', async (req, res) => {
 
   if (determine[0] == 'search') {
     let searchObj = await axios.get(urlAPI + 'plants/search?token=' + token + '&q=' + searchStr[0])
-        //.then(resp => console.log(resp.data))
-        .catch(err => console.error(err));
+      //.then(resp => console.log(resp.data))
+      .catch(err => console.error(err));
 
     res.render('searchResults', {
       results: searchObj.data.data,
@@ -47,8 +47,8 @@ router.get('/searchResults', async (req, res) => {
     let searchStr = Object.values(queryObject);
 
     let check = await axios.get(urlAPI + 'plants/search?token=' + token + '&q=' + searchStr[0])
-        //.then(resp => console.log(resp.data))
-        .catch(err => console.error(err));
+      //.then(resp => console.log(resp.data))
+      .catch(err => console.error(err));
 
     let destruct1 = check.data.links.last.split('?');
     let destruct2 = destruct1[1].split('&');
@@ -56,8 +56,8 @@ router.get('/searchResults', async (req, res) => {
 
     if (searchStr[1] <= lastPage[1]) {
       let nextResults = await axios.get(urlAPI + '/plants/search?token=' + token + '&q=' + searchStr[0] + '&page=' + searchStr[1])
-          //.then(resp => console.log(resp.data.data))
-          .catch(err => console.error(err));
+        //.then(resp => console.log(resp.data.data))
+        .catch(err => console.error(err));
 
       res.render('searchResults', {
         results: nextResults.data.data,
@@ -75,12 +75,12 @@ router.get('/searchResults', async (req, res) => {
   }
 })
 
-router.get('/reference', function(req,res){
+router.get('/reference', function (req, res) {
   res.render('referencePage');
   res.end();
 });
 
-router.get('/about', function(req,res){
+router.get('/about', function (req, res) {
   res.render('about');
   res.end();
 });
