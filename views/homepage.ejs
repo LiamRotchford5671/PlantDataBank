@@ -18,43 +18,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
 
 </head>
-<body class="homepage-content">
-  <section class="row">
-    <nav class="navbar navbar-expand-lg bg-light d-flex justify-content-between col-12" id="nav">
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <a class="navbar-brand" href="/"><img class="logo" src="../Icons/leaves.png" alt="" />Plant Bank</a>
 
-      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-        <ul class="navbar-nav align-self-end">
-          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="/reference">Reference</a></li>
-        </ul>
-      </div>
-    </nav>
-  </section>
+<nav class="navbar bg-light">
+  <a class="navbar-brand"  href="/"><img class="logo" src="../Icons/leaves.png" alt="" />Plant Bank</a>
+  <ul class="navbar-items">
+    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+    <li class="nav-item"><a class="nav-link" href="/singleResult">test:SingleResult</a></li>
+  </ul>
+</nav>
 
-  <section class="row mb-5">
-    <div class="col">
-      <div class="card searchStyle">
-        <img class="card-img" src="../images/back-img.png">
-        <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
-          <div class="input-group input-group-lg input-group-append">
-            <div class="input-group-append">
-              <button class="input-group-text" id="searchBtn" onclick="getSearchResults()">Search</button>
+
+<body>
+  <section class="d-flex justify-content-center mb-5">
+    <section class="mainContent">
+
+      <section class="row mb-5" aria-label="Search Bar">
+        <div class="col">
+          <div class="card searchStyle">
+            <img class="card-img" src="../images/SearchBackground.jpg" height="300px" alt="">
+            <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
+              <div class="input-group input-group-lg">
+                <div class="input-group-prepend">
+                  <button class="input-group-text" id="searchBtn" role="button"
+                    onclick="getSearchResults()">Search</button>
+                </div>
+                <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
+              </div>
             </div>
-            <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-
-  <section class="homeContent d-flex justify-content-center mb-5">
-    <section id="mainContent">
+      </section>
 
       <section class="row justify-content-center rowSpacing mb-1" aria-label="Genus Title">
         <h1 class="text-light" role="title">
@@ -312,9 +306,24 @@
               aria-label="Present Next Slide of Suggestions" style="float:right" data-slide="next"><i
                 class="fas fa-2x fa-arrow-circle-right"></i></a>
           </div>
+
         </div>
       </section>
+
+      <!-- TODO: Add this to the credits, resources, footer etc... -->
+      </br>
+      </br>
+      </br>
+      <hr class="gap-line">
+      <div class="credits" font-size="small">
+        <p class="credit-text">Icons made by <a class="credit-link" href="http://www.freepik.com/">Freepik</a>. </p>
+        <p class="credit-text">Carousel with card initial framework credited to <a class="credit-link" href="https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view">Alessandro Piffero</a>. </p>
+      </div>
+
+
     </section>
+
+
     <script type="text/javascript" src="../javascripts/homepage.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -328,11 +337,5 @@
     </script>
   </section>
 </body>
-
-<!-- TODO: Add this to the credits, resources, footer etc... -->
-<footer class="credits" font-size="small">
-  <p class="credit-text">Icons made by <a class="credit-link" href="http://www.freepik.com/">Freepik</a>. </p>
-  <p class="credit-text">Carousel with card initial framework credited to <a class="credit-link" href="https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view">Alessandro Piffero</a>. </p>
-</footer>
 
 </html>

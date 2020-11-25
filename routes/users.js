@@ -10,8 +10,8 @@ router.get('/about', function(req,res){
   res.send('respond with a resource(about)');
 })
 
-router.get('/reference', function(req,res){
-  res.send('respond with a resource(reference)');
+router.get('/singleResult', function(req,res){
+  res.send('respond with a resource(singleResult)');
 })
 
 module.exports = router;
