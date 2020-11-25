@@ -1,48 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="description" content="PlantBank information application utilizing the Trefle.io plant API">
+  <meta name="keywords" content="EJS, CSS, JavaScript, Express (Node), Bootstrap, Font Awesome">
+  <meta name="author" content="Liam Rotchford">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Plant Bank Homepage</title>
   <script src="https://kit.fontawesome.com/31a00af4ac.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-  <link rel='stylesheet' href='/stylesheets/homepage.css' />
+  <link rel='stylesheet' href='/stylesheets/about.css' />
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
-
 </head>
 
-<nav class="navbar">
-  <a class="navbar-brand"  href="/"><img class="logo" src="../Icons/leaves.png" alt="" />Plant Bank</a>
-  <ul class="navbar-items">
-    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-  </ul>
-</nav>
-
 <body>
-    <section class="d-flex justify-content-center">
-        <section class="mainContent">
-    
-          <section class="row">
-            <div class="col">
-              <div class="card searchStyle">
-                <img class="card-img" src="../images/SearchBackground.jpg" height="300px" alt="SeachBar Background Image">
-              </div>
-            </div>
-          </section>
-        </section>
-    </section>
+<!--search bar area-->
+<section class="row">
+  <nav class="navbar navbar-expand-lg bg-light d-flex justify-content-between col-12" id="nav">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="/"><img class="logo" src="../Icons/leaves.png" alt="" />Plant Bank</a>
+
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav align-self-end">
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="/reference">Reference</a></li>
+      </ul>
+    </div>
+  </nav>
+</section>
+
+<section class="aboutPage">
+  <section class="mainContent">
+    <h2 class="title mb-2">Project Concept:</h2>
+<!--    <p class="list-info">Utilizing the Trefle api; create a minimalisic, simple, and accessible web application for users to quickly gather plant inforamtion and specificaitons.</p>-->
+
+    <h2 class="title mb-2">Project Team Members:</h2>
+    <ul class="list">
+      <li><h3>Liam Rotchford</h3></li>
+      <li><h3>Iris Li</h3></li>
+      <li><h3>Yufei Tao</h3></li>
+    </ul>
+
+    <h2 class="title mb-2">Github repo address: </h2>
+    <ul class="list">
+      <li><h3><a href="https://github.com/LiamRotchford5671/PlantDataBank">Plant Bank</a></h3></li>
+    </ul>
+
+    <h2 class="title mb-2">Deplyment: </h2>
+    <ul class="list">
+      <li><a href="/">*information to be added*</a></li>
+    </ul>
+
+
+  </section>
+</section>
+
 </body>
 
-</br>
-</br>
-</br>
-<hr class="gap-line">
-<div class="credits" font-size="small">
+<footer class="credits" font-size="small">
   <p class="credit-text">Icons made by <a class="credit-link" href="http://www.freepik.com/">Freepik</a>. </p>
   <p class="credit-text">Carousel with card initial framework credited to <a class="credit-link" href="https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view">Alessandro Piffero</a>. </p>
-</div>
+</footer>
 
 </html>
