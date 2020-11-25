@@ -1,18 +1,20 @@
 .homepage-content {
-  /*padding: 50px;*/
   display: grid;
   grid-template-areas: "navbar"
-                       "mainContent";
-                       "footer"
+    "mainContent";
   grid-template-rows: auto 1fr auto;
   background-color: #f0f0f0;
 }
 
-.homeContent{
+.homeContent {
   padding: 50px;
 }
 
-.rowSpacing {
+.rowSpacingGenus {
+  margin-top: 4em;
+}
+
+.rowSpacingSgts {
   margin-top: 8em;
 }
 
@@ -36,7 +38,7 @@ a:hover {
   border: none;
 }
 
-.card-img{
+.card-img {
   width: 960px;
   height: auto;
   margin-left: auto;
@@ -73,7 +75,8 @@ a:hover {
   padding-right: 10px;
 }
 
-.navbar-brand, .logo{
+.navbar-brand,
+.logo {
   font-family: lato, serif;
   padding-left: 10px;
   font-size: 3.5rem;
@@ -84,7 +87,7 @@ a:hover {
 }
 
 
-.homepage-content > .navbar {
+.homepage-content>.navbar {
   /*width: 100%;*/
   /*!*min-height: 10vh;*!*/
   max-height: 100px;
@@ -101,7 +104,7 @@ a:hover {
   max-width: min-content;
 }
 
-.navbar-nav{
+.navbar-nav {
   /*display: flex;*/
   /*list-style: none;*/
   /*float: right;*/
@@ -196,6 +199,6 @@ button:active,
   color: #21578C;
 }
 
-.credit-text{
+.credit-text {
   color: #6c6b6b;
 }
