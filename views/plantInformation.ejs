@@ -8,7 +8,7 @@
       <meta charset="UTF-8">
       <meta name="description" content="PlantBank information application utilizing the Trefle.io plant API">
       <meta name="keywords" content="EJS, CSS, JavaScript, Express (Node), Bootstrap, Font Awesome">
-      <meta name="author" content="Liam Rotchford">
+      <meta name="author" content="Yan Li">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
       <title>Plant Information Page</title>
@@ -24,7 +24,7 @@
     </head>
 <body>
 
-    <section class="d-flex justify-content-center mb-5">
+    <section class="d-flex justify-content-center mt-3 mb-3 ">
         <section class="mainContent">
     
           <section class="row mb-5" aria-label="Search Bar">
@@ -48,91 +48,73 @@
          <!-- <div class="container pageContainer mt-5 rounded">  -->
 
 
-            <!-- <section class="innerBox"> -->
+            <section class="d-flex justify-content-center ">
             <main>
-                <div class="square1 mx-auto mt-3 rounded" style="width:350px" >
+                <div class="square1 mx-auto" style="width:auto" >
                     <!-- <h1>Square1</h1> -->
                     <!-- <div class="container pageContainer mt-3 mb-2 rounded"> -->
-                        <img class="plant_img" src="<%= data.image_url %>" width="400" height="400" alt="<%= data.slug %> image">
+                        <img class="plant_img" src="<%= data.image_url %>" width="450" height="450" alt="<%= data.slug %> image">
                     <!-- </div> -->
 
-
-
-
-
-
-
                 </div>
 
-                <div class="square2 ">
-                    <div class="plant_name">
+                <div class="square2 mx-auto" style="width:auto">
+                    <div class="container pageContainer1 ">
+                        <div class="plant_name">
+                        
+                        <% if (data.common_name) {%>
+                            <h1>
+                                <p class="text-center text-white" style="text-transform: capitalize"><%= data.common_name %></p>
+                            </h1>
+                        <% } else { %> 
+                                <p><%= data.scientific_name %></p> 
+                        
+                        <% } %>
                     
-                    <% if (data.common_name) {%>
-                        <h1>
-                            <p style="text-transform: capitalize"><%= data.common_name %></p>
-                        </h1>
-                    <% } else { %> 
-                            <p><%= data.scientific_name %></p> 
-                    
-                    <% } %>
-                    
+                        </div>
                     </div>
 
-
-
-
-
-
                 </div>
 
-
-
-                <div class="square3 rounded">
-                    <h1>Square3</h1>
+                <div class="square3 mx-auto" style="width:auto">
 
                     <!-- <img class="plant_img" src="<%= data.image_url %>" width="400" height="400" alt="<%= data.slug %> image"> -->
-                    <div class="container pageContainer mt-5 rounded">
-                    <ul>
-                        <li>
-                            <p><%= data.scientific_name %></p>
-                        </li>
-                        <li>
-                            <p><%= data.main_species.family %></p>
-                        </li>
-                        <li>
+                    <div class="container pageContainer">
+                        <!-- <div class="left-side"> -->
+                            <div class="row">
+                                <div class="col">
+                                    <h4>
+                                        <p class="text-left text-white">Scientific Name: <%= data.scientific_name %></p>
+                                    </h4>
+                                </div>
+                                <div class="col"> 
+                                    <h4>
+                                        <p class="text-left text-white">Family: <%= data.main_species.family %></p>
+                                    </h4>      
+                                </div>
+                            </row>
+                            
+                            <div class="w-100"></div>
 
-                            <p><%= data.family_common_name %></p>
-                        </li>
-                        
-                        <li>
-                            <p><%= data.genus.name %></p>
-                        </li>
-                        
-                        
-                        
-                        
+                                
+                        <!-- <div class="right-side"> -->
+                                
+                                <div class="col">
+                                    <h4>
+                                        <p class="text-left text-white">Genus Name: <%= data.genus.name %></p>
+                                    </h4>
+                                </div>
 
-                    </ul>
+                                <div class="col"> 
+                                    <h4>
+                                        <p class="text-left text-white">Family Common Name: <%= data.family_common_name %></p>
+                                    </h4>      
+                                </div>
+                         </div>
                    
                     </div>
-
-
-
-
-
                 </div>
-                
- 
-
-
-
-
-
-
-
             </main>
-
-           
-    
+        </section>
 </body>
 </html>
