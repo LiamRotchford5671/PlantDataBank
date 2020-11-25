@@ -11,7 +11,7 @@ function getSearchResults() {
     let searchString = document.getElementById("searchInp").value;
     console.log(searchString);
 
-    window.location.href = 'results?q=' + `${searchString}`;
+    window.location.href = 'searchResults?search=' + `${searchString}`;
 }
 
 /*Plant Genus Category Events */
@@ -21,42 +21,42 @@ function getSearchResults() {
 const Abies = document.getElementById("abiesBtn");
 
 Abies.addEventListener('click', event => {
-    window.location.href = 'results?genus=abies';
+    window.location.href = 'genusResults?genus=abies';
 });
 
 /* Carex */
 const Carex = document.getElementById("carexBtn");
 
 Carex.addEventListener('click', event => {
-    window.location.href = 'results?genus=carex';
+    window.location.href = 'genusResults?genus=carex';
 });
 
 /* Fraxinus */
 const Fraxinus = document.getElementById("fraxinusBtn");
 
 Fraxinus.addEventListener('click', event => {
-    window.location.href = 'results?genus=fraxinus';
+    window.location.href = 'genusResults?genus=fraxinus';
 });
 
 /* Senecio */
 const Senecio = document.getElementById("senecioBtn");
 
 Senecio.addEventListener('click', event => {
-    window.location.href = 'results?genus=senecio';
+    window.location.href = 'genusResults?genus=senecio';
 });
 
 /* Sorbus */
 const Sorbus = document.getElementById("sorbusBtn");
 
 Sorbus.addEventListener('click', event => {
-    window.location.href = 'results?genus=sorbus';
+    window.location.href = 'genusResults?genus=sorbus';
 });
 
 /* Torilis */
 const Torilis = document.getElementById("torilisBtn");
 
 Torilis.addEventListener('click', event => {
-    window.location.href = 'results?genus=torilis';
+    window.location.href = 'genusResults?genus=torilis';
 });
 
 

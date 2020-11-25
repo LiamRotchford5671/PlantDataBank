@@ -8,7 +8,6 @@ var dotenv = require('dotenv').config({
     path: __dirname + '/.env'
 });
 var routes = require('./routes/routePaths');
-var users = require('./routes/users');
 
 var app = express();
 
@@ -26,9 +25,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
+app.use('/homepage', routes);
 app.use('/about', routes);
-app.use('/users', routes);
 app.use('/reference', routes);
+app.use('/error', routes);
+app.use('/genusResults', routes);
+app.use('/searchResults', routes);
+app.use('/plantInformation', routes);
 
 /// catch 404 and forwarding to error handler
 app.use(function (req, res, next) {
