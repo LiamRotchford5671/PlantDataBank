@@ -74,8 +74,6 @@ router.get('/searchResults', async (req, res) => {
     res.render('error');
   }
 
-router.get('/reference', function(req,res){
-  res.render('referencePage');
   res.end();
 });
 
