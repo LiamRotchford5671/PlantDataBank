@@ -2,11 +2,10 @@
   /*padding: 50px;*/
   font-family: "Times New Roman", Times, serif;
   background-color: #ffffff;
-  /*grid-template-areas: "navbar navbar"*/
-  /*                     "section section"*/
-  /*                     "section section"*/
-  /*                     "footer footer";*/
-  /*grid-auto-rows: 20% 50% 50% 20%;*/
+  display: grid;
+  grid-template-areas: "navbar"
+                       "mainContent";
+  grid-auto-rows: 1fr 200px;
 }
 
 .homeContent{
@@ -74,25 +73,26 @@ a:hover {
   padding-right: 10px;
 }
 
-.navbar-brand{
+.navbar-brand, .logo{
   padding-left: 10px;
   font-size: 3.5rem;
   color: #2C7776;
   font-weight: bold;
-  /*display: inline-block;*/
+  /*display: inline-block;
   /*background-position: right;*/
 }
 
 
-.navbar {
+.homepage-content > .navbar {
   /*width: 100%;*/
   /*!*min-height: 10vh;*!*/
+  max-height: 100px;
   /*padding: 0 0;*/
   /*display: flex;*/
   /*justify-content: space-between;*/
   /*align-content: center;*/
   /*margin: 0;*/
-  /*z-index: 1;*/
+  z-index: 1;
   font-family: lato, serif;
   /*height: 6rem;*/
 }
