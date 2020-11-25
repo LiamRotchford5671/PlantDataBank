@@ -29,8 +29,8 @@ router.get('/about', function(req,res){
   res.end();
 });
 
-router.get('/singleResult', function(req,res){
-  res.render('singleResult');
+router.get('/reference', function(req,res){
+  res.render('referencePage');
   res.end();
 });
 
