@@ -1,3 +1,4 @@
+/* Next Button Search Results */
 const nextSearchBtn = document.getElementById("nextSearchBtn");
 
 nextSearchBtn.addEventListener('click', event => {
@@ -16,3 +17,8 @@ nextSearchBtn.addEventListener('click', event => {
         window.location.href = 'searchResults?search=' + searchStr[1];
     }
 });
+
+/* Search Results Plant Details Btn */
+function getDetails(slug) {
+    window.location.href = 'plantInformation?plant=' + slug;
+}
