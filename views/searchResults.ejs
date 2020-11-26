@@ -18,7 +18,6 @@
 
         <section class="result_list">
 
-            <% if (results) { %>
             <table class="table text-light" id="table" class="text-light" data-toggle="table">
                 <thead>
                     <tr>
@@ -46,22 +45,18 @@
                 </tbody>
 
             </table>
-            <% } else { %>
-            <section class="card">
-                <div class="card-body">
-                    <h1 class="card-title">No More Results</h1>
-                </div>
-            </section>
+
+            <% if (count > 1) { %>
+            <button id="prevSearchBtn" class="btn btn-primary" role="button" value="<%= count %>">Previous</button>
             <% } %>
 
-
-            <% if (results) { %>
+            <% if (count < lastPg) { %>
             <button id="nextSearchBtn" class="btn btn-primary" role="button" value="<%= count %>">Next</button>
             <% } else { %>
-            <button id="nextSearchBtn" class="btn btn-primary" role="button" value="reset">First Page</button>
+            <!-- Ignore styling this or changing, created solely so the JS still works (it not visible and disabled)-->
+            <button id="nextSearchBtn" class="btn btn-primary d-none" disabled role="button"
+                value="<%= count %>">Next</button>
             <% } %>
-
-
 
         </section>
 
