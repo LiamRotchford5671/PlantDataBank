@@ -64,29 +64,116 @@
         <!-- Container for plant info body -->
          <section class="container pageContainer mt-5 rounded"> 
             <!-- first row first col -->
-            <section class="row theRow" aria-label="Plant Info First Row">
-                <div class="card space1 col col-md-6 col-sm-6 mt-3 d-flex mx-auto align-items-center theCol1 "
-                            aria-label="space1_img">
-                    <img class="plant_img" src="<%= data.image_url %>"  alt="<%= data.slug %> image">
-                        <div class="card-body">
+            <section class="row theRow1" aria-label="Plant Info First Row">
+              <div class="card elementShadow align-items-center col-lg-6 col-auto my-lg-1 my-md-5 my-sm-5">
+                <!-- <div class="card space1 col col-md-6 col-sm-6 mt-3 d-flex mx-auto my-auto align-items-center theCol1 " --> 
+                            <!-- aria-label="space1_img"> -->
+                    <img class="plant_img" src="<%= data.image_url %>" height="380px" alt="<%= data.slug %> image">
+                        <!-- <div class="card-body">
                             <h4></h4>
-                        </div>
+                        </div> -->
                 </div>
-            </section>
-            <!-- first row second col -->
-            <div class="card space2 col col-md-6 col-sm-6 mt-3 d-flex mx-auto align-items-center theCol2 "
-                        aria-label="space2_info1">
-                <div class="card-header">
-                        hello
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item text-left text-white">Scientific Name: <%= data.scientific_name %</li>
-                    <li class="list-group-item"></li>
-                    <li class="list-group-item"></li>
-                </ul>
             
+            <!-- first row second col -->
+            <div class="card elementShadow align-items-center col-lg-6 col-auto my-lg-1 my-md-5 my-sm-5">
+            <!-- <div class="card space2 col col-md-6 col-sm-6 mt-3 d-flex mx-auto my-auto align-items-center theCol2 " -->
+                        <!-- aria-label="space2_info1"> -->
+                          <!-- <div class="card space1 col col-md-6 col-sm-6 mt-3 d-flex mx-auto my-auto align-items-center theCol1 " --> 
+                                      <!-- aria-label="space1_img"> -->
+                                      <ul class="list-group list-group-flush">
+                                        <li class="list-group-item text-left ">Scientific Name: <%= data.scientific_name %></li>
+                                        <li class="list-group-item text-left ">Genus Name: <%= data.genus.name %></li>
+                                        <li class="list-group-item text-left ">Family: <%= data.main_species.family %></li>
+                                        <li class="list-group-item text-left ">Family Common Name: <%= data.family_common_name %></li>
+                                      </ul>
+                                  <div class="card-body">
+                                      <h4></h4>
+                          </div>
+                <!-- <ul class="list-group list-group-flush">
+                
+                    <li class="list-group-item text-left ">Scientific Name: <%= data.scientific_name %></li>
+                    <li class="list-group-item text-left ">Genus Name: <%= data.genus.name %></li>
+                    <li class="list-group-item text-left ">Family: <%= data.main_species.family %></li>
+                    <li class="list-group-item text-left ">Family Common Name: <%= data.family_common_name %></li>
+                </ul> -->
+             </div>
+          </section>  
+
+          <!-- second row  -->
+          <section class="row theRow2" aria-label="Plant Info Second Row">
+            <div class="card elementShadow align-items-center col-lg-12 col-auto my-lg-1 my-md-5 my-sm-5">
+              <!-- <div class="card space1 col col-md-6 col-sm-6 mt-3 d-flex mx-auto my-auto align-items-center theCol1 " --> 
+                          <!-- aria-label="space1_img"> -->
+                            <!-- <div class="row small_row1">
+                              <div class="col small_col col-lg-6">Year: <%= data.year %></div>
+                              <div class="col small_col col-lg-6">Author: <%= data.author %></div>
+                            </div>
+                            <div class="row small_row2">
+                              <div class="col small_col col-lg-6">Bibliography: <%= data.Bibliography %></div>
+                              <div class="col small_col col-lg-6">Location: <%= data.observations %></div>
+                            </div>
+                            <div class="row small_row3">
+                              <div class="col small_col col-lg-6">Vegetable: <%= data.vegetable %></div>
+                              <div class="col small_col col-lg-6">Edible: <%= data.main_species.edible %></div>
+                            </div> -->
+                          <!-- </div>section> -->
+
+                          <!-- table -->
+                          <table class="table table-striped col-lg-12 col-auto">
+                              <thead>
+                                <h2>
+                                  <tr>
+                                    <th>Details</th>
+                                  </tr>
+                                </h2>
+                              </thead>
+                              <tbody>
+                                <tr class="table-info">
+                                  <th scope="row">1</th>
+                                    <td>Year</td>
+                                    <td><%= data.year %></td>
+                                    <td></td>
+                                    <td>Location</td>
+                                    <td><%= data.observations %></td>
+                                    
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                    <td>Author</td>
+                                    <td><%= data.author %></td>
+                                    <td></td>
+                                    <td>Bibliography</td>
+                                    <td><%= data.Bibliography %></td>
+                                </tr>
+                                <tr class="table-info">
+                                  <th scope="row">3</th>
+                                    <td>Vegetable</td>
+                                    <td><%= data.vegetable %></td>
+                                    <td></td>
+                                    <td>Edible</td>
+                                    <td><%= data.main_species.edible %></td>
+                                </tr>
+                              </tbody>
+
+                          </table>
+
+
+
+
+
+
+
+
+
+
+
+
+              </div>
+
+        </section>
            
-            </div>
+                    
+            <!-- </div>
 
             //     </div>
                 
@@ -95,7 +182,7 @@
             //                 <h3><%= data.common_name %></h3>
 
             //             </div>
-            // </div>
+            // </div> -->
 
             // <!-- <div class="row theRow">
             //     <div class="col col-md-6 theCol3">
@@ -113,8 +200,9 @@
 
             // </div> -->
 
-            // </section>
+           
+        </section>
 
-         </section> 
+    </section> 
 </body>
 </html>
