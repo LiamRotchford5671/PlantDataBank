@@ -45,76 +45,76 @@
           </section>
     
         <!-- <section class="theBox justify-content-center rowSpacing mb-1"> -->
-         <!-- <div class="container pageContainer mt-5 rounded">  -->
+        <!-- Header or name of the plant -->
+        <section class="row justify-content-center gap mb-1">
+            <h1 class="text-center">
+                <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
+                <% if (data.common_name) {%>
+                    <h1>
+                        <p class="text-center text-white" style="text-transform: capitalize"><%= data.common_name %></p>
+                    </h1>
+                <% } else { %> 
+                        <p class="text-center text-white"><%= data.scientific_name %></p> 
+                
+                <% } %>
+                <i class="fas fa-xs fa-leaf"></i>
+            </h1>
+        </section> 
 
-
-            <section class="d-flex justify-content-center ">
-            <main>
-                <div class="square1 mx-auto" style="width:auto" >
-                    <!-- <h1>Square1</h1> -->
-                    <!-- <div class="container pageContainer mt-3 mb-2 rounded"> -->
-                        <img class="plant_img" src="<%= data.image_url %>" width="450" height="450" alt="<%= data.slug %> image">
-                    <!-- </div> -->
-
-                </div>
-
-                <div class="square2 mx-auto" style="width:auto">
-                    <div class="container pageContainer1 ">
-                        <div class="plant_name">
-                        
-                        <% if (data.common_name) {%>
-                            <h1>
-                                <p class="text-center text-white" style="text-transform: capitalize"><%= data.common_name %></p>
-                            </h1>
-                        <% } else { %> 
-                                <p><%= data.scientific_name %></p> 
-                        
-                        <% } %>
-                    
+        <!-- Container for plant info body -->
+         <section class="container pageContainer mt-5 rounded"> 
+            <!-- first row first col -->
+            <section class="row theRow" aria-label="Plant Info First Row">
+                <div class="card space1 col col-md-6 col-sm-6 mt-3 d-flex mx-auto align-items-center theCol1 "
+                            aria-label="space1_img">
+                    <img class="plant_img" src="<%= data.image_url %>"  alt="<%= data.slug %> image">
+                        <div class="card-body">
+                            <h4></h4>
                         </div>
-                    </div>
-
                 </div>
-
-                <div class="square3 mx-auto" style="width:auto">
-
-                    <!-- <img class="plant_img" src="<%= data.image_url %>" width="400" height="400" alt="<%= data.slug %> image"> -->
-                    <div class="container pageContainer">
-                        <!-- <div class="left-side"> -->
-                            <div class="row">
-                                <div class="col">
-                                    <h4>
-                                        <p class="text-left text-white">Scientific Name: <%= data.scientific_name %></p>
-                                    </h4>
-                                </div>
-                                <div class="col"> 
-                                    <h4>
-                                        <p class="text-left text-white">Family: <%= data.main_species.family %></p>
-                                    </h4>      
-                                </div>
-                            </row>
-                            
-                            <div class="w-100"></div>
-
-                                
-                        <!-- <div class="right-side"> -->
-                                
-                                <div class="col">
-                                    <h4>
-                                        <p class="text-left text-white">Genus Name: <%= data.genus.name %></p>
-                                    </h4>
-                                </div>
-
-                                <div class="col"> 
-                                    <h4>
-                                        <p class="text-left text-white">Family Common Name: <%= data.family_common_name %></p>
-                                    </h4>      
-                                </div>
-                         </div>
-                   
-                    </div>
+            </section>
+            <!-- first row second col -->
+            <div class="card space2 col col-md-6 col-sm-6 mt-3 d-flex mx-auto align-items-center theCol2 "
+                        aria-label="space2_info1">
+                <div class="card-header">
+                        hello
                 </div>
-            </main>
-        </section>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-left text-white">Scientific Name: <%= data.scientific_name %</li>
+                    <li class="list-group-item"></li>
+                    <li class="list-group-item"></li>
+                </ul>
+            
+           
+            </div>
+
+            //     </div>
+                
+            //             <div class="col col-md-6 theCol2">
+            //                 row 1 col 2
+            //                 <h3><%= data.common_name %></h3>
+
+            //             </div>
+            // </div>
+
+            // <!-- <div class="row theRow">
+            //     <div class="col col-md-6 theCol3">
+            //         row 2 col 1
+            //         <img class="plant_img" src="<%= data.image_url %>"  alt="<%= data.slug %> image">
+                    
+            //     </div>
+
+            
+            //         <div class="col col-md-6 theCol4">
+            //                 row 2 col 2
+            //                 <img class="plant_img" src="<%= data.image_url %>"  alt="<%= data.slug %> image">
+
+            //         </div>
+
+            // </div> -->
+
+            // </section>
+
+         </section> 
 </body>
 </html>
