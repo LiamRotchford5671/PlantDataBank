@@ -25,6 +25,18 @@ router.get('/', function (req, res) {
   res.end();
 });
 
+/* GET Reference Page */
+router.get('/reference', function (req, res) {
+  res.render('referencePage');
+  res.end();
+});
+
+/* GET About Page */
+router.get('/about', function (req, res) {
+  res.render('about');
+  res.end();
+});
+
 /* GET SearchResults Page */
 /* Handles SearchBar Results */
 router.get('/searchResults', async (req, res) => {
@@ -40,8 +52,10 @@ router.get('/searchResults', async (req, res) => {
 
     res.render('searchResults', {
       results: searchObj.data.data,
-      count: 1
+      count: 1,
+      lastPg: lastPage[1]
     });
+
   } else if (determine[0] == 'nextSearchPage') { //Api returns 20 results at a time, this handles getting thet next set of results
     const queryObject = url.parse(req.url, true).query;
     let searchStr = Object.values(queryObject);
@@ -54,28 +68,20 @@ router.get('/searchResults', async (req, res) => {
     let destruct2 = destruct1[1].split('&');
     let lastPage = destruct2[0].split('=');
 
-    if (searchStr[1] <= lastPage[1]) {
-      let nextResults = await axios.get(urlAPI + '/plants/search?token=' + token + '&q=' + searchStr[0] + '&page=' + searchStr[1])
-        //.then(resp => console.log(resp.data.data))
-        .catch(err => console.error(err));
+    let nextResults = await axios.get(urlAPI + '/plants/search?token=' + token + '&q=' + searchStr[0] + '&page=' + searchStr[1])
+      //.then(resp => console.log(resp.data.data))
+      .catch(err => console.error(err));
 
-      res.render('searchResults', {
-        results: nextResults.data.data,
-        count: searchStr[1]
-      });
+    res.render('searchResults', {
+      results: nextResults.data.data,
+      count: searchStr[1],
+      lastPg: lastPage[1]
+    });
 
-    } else {
-      res.render('searchResults', {
-        results: false,
-        count: 1
-      });
-    }
   } else {
     res.render('error');
   }
-
-  res.end();
-});
+})
 
 /* GET GenusResults Page */
 /* Handles Genus Category Results */
@@ -89,10 +95,12 @@ router.get('/genusResults', async (req, res) => {
     let genusObj = await axios.get(urlAPI + 'genus/' + searchStr[0] + '/plants?token=' + token + '&genus=' + searchStr[0])
       //.then(resp => console.log(resp.data.data))
       .catch(err => console.error(err));
+    let lastPage = genusObj.data.links.last.slice(-1);
 
     res.render('genusResults', {
       results: genusObj.data.data,
-      count: 1
+      count: 1,
+      lastPg: lastPage
     });
 
   } else if (determine[0] == 'nextGenusPage') { //Api returns 20 results at a time, this handles getting thet next set of results
@@ -102,22 +110,18 @@ router.get('/genusResults', async (req, res) => {
     let check = await axios.get(urlAPI + 'genus/' + searchStr[0] + '/plants?token=' + token + '&genus=' + searchStr[0])
       //.then(resp => console.log(resp.data.data))
       .catch(err => console.error(err));
+    let lastPage = check.data.links.last.slice(-1);
 
-    if (searchStr[1] <= check.data.links.last.slice(-1)) {
-      let nextResults = await axios.get(urlAPI + '/plants?token=' + token + '&genus=' + searchStr[0] + '&page=' + searchStr[1])
-        //.then(resp => console.log(resp.data.data))
-        .catch(err => console.error(err));
+    let nextResults = await axios.get(urlAPI + '/plants?token=' + token + '&genus=' + searchStr[0] + '&page=' + searchStr[1])
+      //.then(resp => console.log(resp.data.data))
+      .catch(err => console.error(err));
 
-      res.render('genusResults', {
-        results: nextResults.data.data,
-        count: searchStr[1]
-      });
-    } else {
-      res.render('genusResults', {
-        results: false,
-        count: 1
-      });
-    }
+    res.render('genusResults', {
+      results: nextResults.data.data,
+      count: searchStr[1],
+      lastPg: lastPage
+    });
+
   } else {
     res.render('error');
   }

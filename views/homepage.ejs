@@ -19,39 +19,48 @@
 
 </head>
 
-<nav class="navbar bg-light">
-  <a class="navbar-brand"  href="/"><img class="logo" src="../Icons/leaves.png" alt="" />Plant Bank</a>
-  <ul class="navbar-items">
-    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-    <li class="nav-item"><a class="nav-link" href="/singleResult">test:SingleResult</a></li>
-  </ul>
-</nav>
+<body class="homepage-content">
+  <section class="row">
+    <nav class="navbar navbar-expand-lg bg-light d-flex justify-content-between col-12" id="nav">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/"><img class="logo" src="../Icons/leaves.png" alt="" />Plant Bank</a>
 
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav align-self-end">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="/reference">Reference</a></li>
+        </ul>
+      </div>
+    </nav>
+  </section>
 
-<body>
-  <section class="d-flex justify-content-center mb-5">
-    <section class="mainContent">
-
-      <section class="row mb-5" aria-label="Search Bar">
-        <div class="col">
-          <div class="card searchStyle">
-            <img class="card-img" src="../images/SearchBackground.jpg" height="300px" alt="">
-            <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
-              <div class="input-group input-group-lg">
-                <div class="input-group-prepend">
-                  <button class="input-group-text" id="searchBtn" role="button"
-                    onclick="getSearchResults()">Search</button>
-                </div>
-                <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
-              </div>
+  <section class="row">
+    <div class="col">
+      <div class="card searchStyle">
+        <img class="card-img" src="../images/back-img.png">
+        <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
+          <div class="input-group input-group-lg input-group-append">
+            <div class="input-group-append">
+              <button class="input-group-text" id="searchBtn" onclick="getSearchResults()">Search</button>
             </div>
+            <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <section class="row justify-content-center rowSpacing mb-1" aria-label="Genus Title">
-        <h1 class="text-light" role="title">
+
+  <section class="homeContent d-flex justify-content-center">
+    <section id="mainContent">
+
+      <section class="row justify-content-center rowSpacingGenus mb-1" aria-label="Genus Title">
+        <h1 class="text-dark" role="title">
           <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
           Plant Genus Categories
           <i class="fas fa-xs fa-leaf"></i>
@@ -151,8 +160,8 @@
         </div>
       </section>
 
-      <section class="row justify-content-center rowSpacing mb-1" aria-label="Suggestions Title">
-        <h1 class="text-light" role="title">
+      <section class="row justify-content-center rowSpacingSgts mb-1" aria-label="Suggestions Title">
+        <h1 class="text-dark" role="title">
           <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
           Suggestions
           <i class="fas fa-xs fa-leaf"></i>
@@ -298,29 +307,16 @@
           </div>
 
           <div class="controls" aria-label="Suggestions Slider Controls">
-            <a class="btn btn-success mt-2 ml-3" href="#suggestions" role="link button"
+            <a class="btn text-light btnColoring mt-2 ml-3 col-1" href="#suggestions" role="link button"
               aria-label="Present Previous Slide of Suggestions" data-slide="prev"><i
                 class="fas fa-2x fa-arrow-circle-left"></i></a>
 
-            <a class="btn btn-success mt-2 mr-3" href="#suggestions" role="link button"
+            <a class="btn text-light btnColoring mt-2 mr-3 col-1" href="#suggestions" role="link button"
               aria-label="Present Next Slide of Suggestions" style="float:right" data-slide="next"><i
                 class="fas fa-2x fa-arrow-circle-right"></i></a>
           </div>
-
         </div>
       </section>
-
-      <!-- TODO: Add this to the credits, resources, footer etc... -->
-      </br>
-      </br>
-      </br>
-      <hr class="gap-line">
-      <div class="credits" font-size="small">
-        <p class="credit-text">Icons made by <a class="credit-link" href="http://www.freepik.com/">Freepik</a>. </p>
-        <p class="credit-text">Carousel with card initial framework credited to <a class="credit-link" href="https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view">Alessandro Piffero</a>. </p>
-      </div>
-
-
     </section>
 
 
@@ -329,13 +325,23 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
       integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
   </section>
 </body>
+
+<!-- TODO: Add this to the credits, resources, footer etc... -->
+<footer class="credits" font-size="small">
+  <p class="credit-text">Icons made by <a class="credit-link" href="http://www.freepik.com/">Freepik</a>. </p>
+  <p class="credit-text">Carousel with card initial framework credited to <a class="credit-link"
+      href="https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view">Alessandro Piffero</a>. </p>
+</footer>
 
 </html>

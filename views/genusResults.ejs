@@ -18,7 +18,6 @@
 
     <section class="result_list">
 
-      <% if (results) { %>
       <table class="table text-light" id="table" class="text-light" data-toggle="table">
         <thead>
           <tr>
@@ -38,24 +37,25 @@
             <% } else { %>
             <td> <%= results[i].scientific_name %> </td>
             <% } %>
-            <td> <button class="btn btn-primary" value="<%= results[i].slug %>Btn">Details</button> </td>
+            <td> <button class="btn btn-primary" onclick="getDetails('<%= results[i].slug %>')">Plant
+                Details</button>
+            </td>
           </tr>
           <% } %>
         </tbody>
 
       </table>
-      <% } else { %>
-      <section class="card">
-        <div class="card-body">
-          <h1 class="card-title">No More Results</h1>
-        </div>
-      </section>
+
+
+      <% if (count > 1) { %>
+      <button id="prevGenusBtn" class="btn btn-primary" role="button" value="<%= count %>">Previous</button>
       <% } %>
 
-      <% if (results) { %>
-      <button id="nextGenusBtn" class="btn btn-primary" role="button" value="<%=%>">Next</button>
+      <% if (count < lastPg) { %>
+      <button id="nextGenusBtn" class="btn btn-primary" role="button" value="<%= count %>">Next</button>
       <% } else { %>
-      <button id=" nextGenusBtn" class="btn btn-primary" role="button" value="reset">First Page</button>
+      <!-- Ignore styling this or changing, created solely so the JS still works (it not visible and disabled)-->
+      <button id="nextGenusBtn" class="btn btn-primary d-none" disabled role="button" value="<%= count %>">Next</button>
       <% } %>
 
     </section>

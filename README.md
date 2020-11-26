@@ -11,7 +11,7 @@ Utilizing the [Trefle](https://trefle.io) api; create a minimalisic, simple, and
 
 ### To Run Project Locally:
 
-1. Be sure to have the following installed: [NodeJs](https://nodejs.org/en/), [Express](https://expressjs.com/), [Npm](https://www.npmjs.com/get-npm), [Nodemon](https://www.npmjs.com/package/nodemon), & [Axios](https://www.npmjs.com/package/axios)
+1. Be sure to have the following installed: [NodeJs](https://nodejs.org/en/), [Express](https://expressjs.com/), [Npm](https://www.npmjs.com/), [Nodemon](https://www.npmjs.com/package/nodemon), & [Axios](https://www.npmjs.com/package/axios)
 
 2. Run the project web server with:
     nodemon start
@@ -26,14 +26,13 @@ Utilizing the [Trefle](https://trefle.io) api; create a minimalisic, simple, and
 - Javascript
 
 #### API:
-- [Trefle](https://trefle.io/about)
+- [Trefle](https://trefle.io)
 
 #### Frameworks, Libraries, & Utilizations:
-- [NodeJS](https://expressjs.com/)
+- [NodeJS](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Font Awesome](https://fontawesome.com/)
-- [Flaticon](https://www.flaticon.com/)
 
 #### Npm Packages:
 - [Nodemon](https://www.npmjs.com/package/nodemon)
@@ -44,7 +43,9 @@ Utilizing the [Trefle](https://trefle.io) api; create a minimalisic, simple, and
 
 #### Resources:
 - [ColorHexa](https://www.colorhexa.com/)
-- [Bootstrap Carousel of Cards Example](https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view)
+- [Flaticon](https://www.flaticon.com/)
+- [Freepik](http://www.freepik.com/)
+- [Bootstrap Card Carousel](https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view)
 - [Mozilla Developer Documentation](https://developer.mozilla.org/en-US/)
 
 
