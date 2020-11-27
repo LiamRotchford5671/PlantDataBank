@@ -45,7 +45,7 @@
                         <% } else { %>
                         <td> <%= results[i].scientific_name %> </td>
                         <% } %>
-                        <td> <button class="btn btn-primary" onclick="getDetails('<%= results[i].slug %>')"> Plant
+                        <td> <button class="btn btn-primary btnColoring btn-lg btn-block my-2 detailBtns" onclick="getDetails('<%= results[i].slug %>')"> Plant
                                 Details</button>
                         </td>
                     </tr>
@@ -54,12 +54,13 @@
 
             </table>
 
+
             <% if (count > 1) { %>
-            <button id="prevSearchBtn" class="btn btn-primary" role="button" value="<%= count %>">Previous</button>
+            <button id="prevSearchBtn" class="btn btn-primary btnColoring" role="button" value="<%= count %>">Previous</button>
             <% } %>
 
             <% if (count < lastPg) { %>
-            <button id="nextSearchBtn" class="btn btn-primary" role="button" value="<%= count %>">Next</button>
+            <button id="nextSearchBtn" class="btn btn-primary btnColoring" role="button" value="<%= count %>">Next</button>
             <% } else { %>
             <!-- Ignore styling this or changing, created solely so the JS still works (it not visible and disabled)-->
             <button id="nextSearchBtn" class="btn btn-primary d-none" disabled role="button"
