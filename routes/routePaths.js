@@ -50,6 +50,10 @@ router.get('/searchResults', async (req, res) => {
       //.then(resp => console.log(resp.data))
       .catch(err => console.error(err));
 
+    let destruct1 = searchObj.data.links.last.split('?');
+    let destruct2 = destruct1[1].split('&');
+    let lastPage = destruct2[0].split('=');
+
     res.render('searchResults', {
       results: searchObj.data.data,
       count: 1,
