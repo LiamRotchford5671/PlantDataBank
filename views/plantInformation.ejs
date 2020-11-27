@@ -44,7 +44,6 @@
             </div>
           </section>
     
-        <!-- <section class="theBox justify-content-center rowSpacing mb-1"> -->
         <!-- Header or name of the plant -->
         <section class="row justify-content-center gap mb-1">
             <h1 class="text-center">
@@ -65,37 +64,50 @@
          <section class="container pageContainer mt-1 rounded"> 
             <!-- first row first col -->
             <section class="row theRow1" aria-label="Plant Info First Row">
-              <!-- <div class="card addShadow align-items-center col-lg-6 col-md-6 col-sm-12 col-auto my-lg-1 my-md-5 my-sm-5"> -->
                 <div class="space1 col-lg-6 col-md-12 col-sm-6 mt-3 d-flex mx-auto  align-items-center theCol1" 
                              aria-label="space1_img">
-                    <img class="plant_img mt-3 mb-1 ml-5" src="<%= data.image_url %>" height="450px" width="400px" alt="<%= data.slug %> image">
-                        <!-- <div class="card-body">
-                            <h4></h4>
-                        </div> -->
+                    <img class="plant_img mt-4 mb-3 ml-5" src="<%= data.image_url %>" height="500px" width="450px" alt="<%= data.slug %> image">
                 </div>
             
             <!-- first row second col -->
-            <!-- <div class="card addShadow align-items-center col-lg-6 col-md-6 col-sm-12 col-auto my-lg-1 my-md-5 my-sm-5"> -->
-            <div class="space2 col-lg-6 col-md-12 col-sm-6 mt-3 d-flex align-items-left theCol2 "
+            <div class="space2 col-lg-6 col-md-12 col-sm-6 mt-3 d-flex align-items-center theCol2 "
                           aria-label="space2_info1"> 
-                              <div class="theText mt-4 mb-3 p-5 ">
-                                      <ul class="list-group list-group-flush mt-5 p-4">
-                                        <li class="list-group-item text-left ">Scientific Name: <%= data.scientific_name %></li>
-                                        <li class="list-group-item text-left ">Genus Name: <%= data.genus.name %></li>
-                                        <li class="list-group-item text-left ">Family: <%= data.main_species.family %></li>
-                                        <li class="list-group-item text-left ">Family Common Name: <%= data.family_common_name %></li>
+                              <div class="theText mt-5 mb-5 mr-5 p-4">
+                                <i class="fas fa-seedling fa-lg fa-flip-horizontal"></i>
+                                    <div class="list_case">
+                                      <ul class="list_id mt-4 ml-2 mr-5 mb-4 p-5">
+                                        <li class="list_item text-left ">Scientific Name: 
+                                          <div class="pInfo">
+                                            <%= data.scientific_name %>
+                                          </div>
+                                        </li>
+                                        <li class="list_item text-left ">Genus Name: 
+                                          <div class="pInfo">
+                                            <%= data.genus.name %>
+                                          </div>
+                                        </li>
+                                        <li class="list_item text-left ">Family: 
+                                          <div class="pInfo">
+                                            <%= data.main_species.family %>
+                                          </div>
+                                        </li>
+                                        <li class="list_item text-left ">Family Common Name: 
+                                          <div class="pInfo">
+                                            <%= data.family_common_name %>
+                                          </div>
+                                        </li>
                                       </ul>
+                                    </div>
                               
-                                  <div class="card-body">
+                            <div class="card-body">
                               </div>
                                       <h4></h4>
-                          </div>
+                              </div>
              </div>
           </section>  
 
           <!-- second row  -->
           <section class="row theRow2" aria-label="Plant Info Second Row">
-            <!-- <div class="card addShadow align-items-center col-lg-12 col-md-12 col-sm-12 col-auto my-lg-1 my-md-5 my-sm-5"> -->
               <div class="card space3 col-lg-12 col-md-12 col-sm-6 mt-3 d-flex mx-auto my-auto align-items-center theCol3 " 
                           aria-label="space1_img"> 
                           <!-- table -->
@@ -116,45 +128,45 @@
                                 <tr class="table-info">
                                   <th scope="row"> <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></th>
                                   <% if (data.year) {%>
-                                    <td>Year</td>
-                                    <td><%= data.year %></td>
+                                    <td class="title">Year</td>
+                                    <td class="title_info"><%= data.year %></td>
                                   <% } else { %> 
-                                    <td>Year</td>
+                                    <td class="title">Year</td>
                                     <td>N/A</td>
                                   <% } %>
                                     <td><i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></td>
                                   <% if (data.observations) {%>
-                                    <td>Location</td>
+                                    <td class="title">Location</td>
                                     <td><%= data.observations %></td>
                                   <% } else { %> 
-                                    <td>Loation</td>
+                                    <td class="title">Loation</td>
                                     <td>N/A</td>
                                   <% } %>
                                 </tr>
                                 <tr>
                                   <th scope="row"><i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></th>
                                   <% if (data.author) {%>
-                                    <td>Author</td>
+                                    <td class="title">Author</td>
                                     <td><%= data.author %></td>
                                   <% } else { %> 
-                                    <td>Author</td>
+                                    <td class="title">Author</td>
                                     <td>N/A</td>
                                   <% } %>
-                                    <td><i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></td>
+                                    <td ><i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></td>
                                   <% if (data.Bibliography) {%>
-                                    <td>Bibliography</td>
+                                    <td class="title">Bibliography</td>
                                     <td><%= data.Bibliography %></td>
                                   <% } else { %> 
-                                    <td>Bibliography</td>
+                                    <td class="title">Bibliography</td>
                                     <td>N/A</td>
                                   <% } %>
                                 </tr>
                                   <tr class="table-info">
                                     <th scope="row"><i class="fas fa-xs fa-leaf fa-flip-horizontal"></th>
-                                    <td>Vegetable</td>
+                                    <td class="title">Vegetable</td>
                                     <td><%= data.vegetable %></td>
-                                    <td><i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></td>
-                                    <td>Edible</td>
+                                    <td class="title"><i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></td>
+                                    <td class="title">Edible</td>
                                     <td><%= data.main_species.edible %></td>
                                 </tr>
                               </tbody>
