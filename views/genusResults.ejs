@@ -46,7 +46,7 @@
           <tbody>
             <% for (let i = 0; i < results.length; i++) { %>
             <tr>
-              <td> <img src="<%= results[i].image_url %>" alt="<%= results[i].slug %> image"
+              <td> <img class="plant_img" src="<%= results[i].image_url %>" alt="<%= results[i].slug %> image"
                   onerror="javascript:this.src='../Icons/ImageUnavailible.png'" width="100" height="100">
               </td>
               <% if (results[i].common_name) { %>
