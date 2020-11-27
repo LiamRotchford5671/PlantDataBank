@@ -25,10 +25,11 @@
   <section class="d-flex justify-content-center mb-1">
 
     <!-- <section class="result_list"> -->
-
+      <div class="container tableContainer m-3 p-3">
       <section class="row theRow2" aria-label="Results_row">
-        <div class="card space3 col-lg-12 mt-3 d-flex mx-auto my-auto align-items-center theCol3 " >
-        <table class="table text-dark table-striped" id="table" class="text-dark" data-toggle="table" >
+        <!-- <div class="card space3 col-lg-12 mt-3 d-flex mx-auto my-auto align-items-center theCol3 " > -->
+      <!-- <div class="container-fluid"> -->
+        <table class="table text-dark table-striped table-bordered" id="table" class="text-dark" data-toggle="table" >
           <thead>
             <tr>
               <th>Image</th>
@@ -55,7 +56,7 @@
           </tbody>
 
         </table>
-      </div>
+      <!-- </div> -->
 
    
 
@@ -69,7 +70,7 @@
       <!-- Ignore styling this or changing, created solely so the JS still works (it not visible and disabled)-->
       <button id="nextGenusBtn" class="btn btn-primary d-none" disabled role="button" value="<%= count %>">Next</button>
       <% } %>
-
+      </div>
     </section>
 
   </section>
