@@ -8,6 +8,8 @@ Utilizing the [Trefle](https://trefle.io) api; create a minimalisic, simple, and
 
 ### Deployment:
 
+- https://plantbank.herokuapp.com/
+
 
 ### To Run Project Locally:
 
@@ -31,6 +33,7 @@ Utilizing the [Trefle](https://trefle.io) api; create a minimalisic, simple, and
 #### Frameworks, Libraries, & Utilizations:
 - [NodeJS](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
+- [Heroku](https://www.heroku.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Font Awesome](https://fontawesome.com/)
 
