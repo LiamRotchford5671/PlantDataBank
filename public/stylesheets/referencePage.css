@@ -27,6 +27,11 @@ a {
     padding-bottom: 10px;
 }
 
+h1 {
+    font-family: lato, serif;
+    padding-bottom: 40px;
+}
+
 h2 {
     font-weight: bold;
 }

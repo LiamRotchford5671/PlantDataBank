@@ -44,6 +44,7 @@ Utilizing the [Trefle](https://trefle.io) api; create a minimalisic, simple, and
 #### Resources:
 - [ColorHexa](https://www.colorhexa.com/)
 - [Flaticon](https://www.flaticon.com/)
+- [Icon Library](https://icon-library.com/)
 - [Freepik](http://www.freepik.com/)
 - [Bootstrap Card Carousel](https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view)
 - [Mozilla Developer Documentation](https://developer.mozilla.org/en-US/)
