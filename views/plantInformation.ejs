@@ -22,36 +22,48 @@
       <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
     
     </head>
-<body>
 
-    <section class="d-flex justify-content-center mt-3 mb-3 ">
-        <section class="mainContent">
+    <body class="homepage-content">
+      <nav>
+        <div class="logo">
+          <a class="navbar-brand" href="/"><img class="logo-img" src="../Icons/leaves.png" alt="" />Plant Bank</a>
+        </div>
+        <ul class="nav-links">
+          <li class="nav-item"><a class="link" href="/">Home</a></li>
+          <li class="nav-item"><a class="link" href="/about">About</a></li>
+          <li class="nav-item"><a class="link" href="/reference">Reference</a></li>
+        </ul>
+        <div class="burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
     
-          <section class="row mb-5" aria-label="Search Bar">
-            <div class="col">
-              <div class="card searchStyle">
-                <img class="card-img" src="../images/SearchBackground.jpg" height="300px" alt="">
-                <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
-                  <div class="input-group input-group-lg">
-                    <div class="input-group-prepend">
-                      <button class="input-group-text" id="searchBtn" role="button"
-                        onclick="getSearchResults()">Search</button>
-                    </div>
-                    <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
-                  </div>
+      <section class="row">
+        <div class="col">
+          <div class="card searchStyle">
+            <img class="card-img" src="../images/back-img.png">
+            <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
+              <div class="input-group input-group-lg input-group-append">
+                <div class="input-group-append">
+                  <button class="input-group-text" id="searchBtn" onclick="getSearchResults()">Search</button>
                 </div>
+                <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
               </div>
             </div>
-          </section>
-    
+          </div>
+        </div>
+      </section>
+      
         <!-- Header or name of the plant -->
         <section class="row justify-content-center mb-1">
             <h1 class="text-center">
                 <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
                 <% if (data.common_name) {%>
-                        <span class="text-center text-white" style="text-transform: capitalize"><%= data.common_name %></span>
+                        <span class="text-center " style="text-transform: capitalize"><%= data.common_name %></span>
                 <% } else { %> 
-                        <span class="text-center text-white"><%= data.scientific_name %></span> 
+                        <span class="text-center"><%= data.scientific_name %></span> 
                 
                 <% } %>
                 <i class="fas fa-xs fa-leaf"></i>
