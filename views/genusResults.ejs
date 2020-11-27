@@ -12,16 +12,24 @@
 </head>
 
 <body>
+    <!-- Header or name of the plant -->
+    <section class="row justify-content-center gap mb-1">
+      <h1 class="text-center bg-white">
+          <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
+           
+          <i class="fas fa-xs fa-leaf"></i>
+      </h1>
+  </section> 
 
   <!-- the header and search bar -->
   <section class="d-flex justify-content-center mb-5">
 
     <section class="result_list">
-
-      <table class="table text-light" id="table" class="text-light" data-toggle="table">
+    <div class="table-responsive">
+      <table class="table text-dark table-striped w-auto" id="table" class="text-dark" data-toggle="table" >
         <thead>
           <tr>
-            <th>Img</th>
+            <th>Image</th>
             <th>Name</th>
             <th>More Information</th>
           </tr>
@@ -45,6 +53,7 @@
         </tbody>
 
       </table>
+    </div>
 
 
       <% if (count > 1) { %>

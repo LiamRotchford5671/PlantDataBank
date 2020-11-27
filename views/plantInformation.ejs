@@ -66,7 +66,13 @@
             <section class="row theRow1" aria-label="Plant Info First Row">
                 <div class="space1 col-lg-6 col-md-12 col-sm-6 mt-3 d-flex mx-auto  align-items-center theCol1" 
                              aria-label="space1_img">
-                    <img class="plant_img mt-4 mb-3 ml-5" src="<%= data.image_url %>" height="500px" width="450px" alt="<%= data.slug %> image">
+                  <% if (data.image_url) {%>
+                      <img class="plant_img mt-4 mb-3 ml-5" src="<%= data.image_url %>" height="500px" width="450px" 
+                                alt="<%= data.slug %> image">     
+                  <% } else { %> 
+                    <img class="plant_img mt-4 mb-3 ml-5" src="../images/no-image-available-icon-13.jpg" height="500px" width="450px" 
+                                alt="<%= data.slug %> image">            
+                  <% } %>
                 </div>
             
             <!-- first row second col -->
