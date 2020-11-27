@@ -106,14 +106,15 @@
                     </tbody>
 
                 </table>
-
+    
+            </section>
 
             <% if (count > 1) { %>
-            <button id="prevSearchBtn" class="btn btn-primary btnColoring" role="button" value="<%= count %>">Previous</button>
+            <button id="prevSearchBtn" class="btn btn-primary btnColoring btn-lg" role="button" value="<%= count %>" style="width:100px">Previous</button>
             <% } %>
 
             <% if (count < lastPg) { %>
-            <button id="nextSearchBtn" class="btn btn-primary btnColoring float-right" role="button" value="<%= count %>">Next</button>
+            <button id="nextSearchBtn" class="btn btn-primary btnColoring btn-lg float-right" role="button" value="<%= count %>" style="width: 100px">Next</button>
             <% } else { %>
             <!-- Ignore styling this or changing, created solely so the JS still works (it not visible and disabled)-->
             <button id="nextSearchBtn" class="btn btn-primary d-none" disabled role="button"
@@ -122,9 +123,8 @@
 
             </div>
 
-        </section>
+            </section>
 
-    </section>
 
     <script type="text/javascript" src="../javascripts/searchResults.js"></script>
 
