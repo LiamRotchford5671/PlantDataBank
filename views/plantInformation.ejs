@@ -45,20 +45,21 @@
           </section>
     
         <!-- Header or name of the plant -->
-        <section class="row justify-content-center gap mb-1">
+        <section class="row justify-content-center mb-1">
             <h1 class="text-center">
                 <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
                 <% if (data.common_name) {%>
-                    <h1>
-                        <p class="text-center text-white" style="text-transform: capitalize"><%= data.common_name %></p>
-                    </h1>
+                    <!-- <h1> -->
+                        <span class="text-center text-white" style="text-transform: capitalize"><%= data.common_name %></span>
+                    <!-- </h1> -->
                 <% } else { %> 
-                        <p class="text-center text-white"><%= data.scientific_name %></p> 
+                        <span class="text-center text-white"><%= data.scientific_name %></span> 
                 
                 <% } %>
                 <i class="fas fa-xs fa-leaf"></i>
             </h1>
         </section> 
+
 
         <!-- Container for plant info body -->
          <section class="container pageContainer mt-1 rounded"> 
