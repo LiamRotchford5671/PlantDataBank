@@ -22,39 +22,42 @@
   </section> 
 
   <!-- the header and search bar -->
-  <section class="d-flex justify-content-center mb-5">
+  <section class="d-flex justify-content-center mb-1">
 
-    <section class="result_list">
-    <div class="table-responsive">
-      <table class="table text-dark table-striped w-auto" id="table" class="text-dark" data-toggle="table" >
-        <thead>
-          <tr>
-            <th>Image</th>
-            <th>Name</th>
-            <th>More Information</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% for (let i = 0; i < results.length; i++) { %>
-          <tr>
-            <td> <img src="<%= results[i].image_url %>" alt="<%= results[i].slug %> image"
-                onerror="javascript:this.src='../Icons/ImageUnavailible.png'" width="100" height="100">
-            </td>
-            <% if (results[i].common_name) { %>
-            <td> <%= results[i].common_name %> </td>
-            <% } else { %>
-            <td> <%= results[i].scientific_name %> </td>
+    <!-- <section class="result_list"> -->
+
+      <section class="row theRow2" aria-label="Results_row">
+        <div class="card space3 col-lg-12 mt-3 d-flex mx-auto my-auto align-items-center theCol3 " >
+        <table class="table text-dark table-striped" id="table" class="text-dark" data-toggle="table" >
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>More Information</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (let i = 0; i < results.length; i++) { %>
+            <tr>
+              <td> <img src="<%= results[i].image_url %>" alt="<%= results[i].slug %> image"
+                  onerror="javascript:this.src='../Icons/ImageUnavailible.png'" width="100" height="100">
+              </td>
+              <% if (results[i].common_name) { %>
+              <td> <%= results[i].common_name %> </td>
+              <% } else { %>
+              <td> <%= results[i].scientific_name %> </td>
+              <% } %>
+              <td> <button class="btn btn-primary" onclick="getDetails('<%= results[i].slug %>')">Plant
+                  Details</button>
+              </td>
+            </tr>
             <% } %>
-            <td> <button class="btn btn-primary" onclick="getDetails('<%= results[i].slug %>')">Plant
-                Details</button>
-            </td>
-          </tr>
-          <% } %>
-        </tbody>
+          </tbody>
 
-      </table>
-    </div>
+        </table>
+      </div>
 
+   
 
       <% if (count > 1) { %>
       <button id="prevGenusBtn" class="btn btn-primary" role="button" value="<%= count %>">Previous</button>
