@@ -24,35 +24,47 @@
     <!-- the header and search bar -->
     <section class="d-flex justify-content-center mb-5">
 
-        <section class="result_list">
-
-            <table class="table text-light" id="table" class="text-light" data-toggle="table">
-                <thead>
+        <div class="container tableContainer m-3 p-3">
+            <section class="row theRow" aria-label="Results_row">
+                <table class="table text-dark table-striped table-bordered" id="table" class="text-dark" data-toggle="table" >
+                    <thead class="head_title text-white">
                     <tr>
-                        <th>Img</th>
-                        <th>Name</th>
-                        <th>More Information</th>
+                        <th>
+                        <h4>IMAGE</h4>
+                        </th>
+                        <th>
+                        <h4>NAME</h4>
+                        </th>
+                        <th>
+                        <h4>MORE INFORMATION</h4>
+                        </th>
                     </tr>
-                </thead>
-                <tbody>
-                    <% for (let i = 0; i < results.length; i++) { %>
-                    <tr>
-                        <td> <img src="<%= results[i].image_url %>" alt="<%= results[i].slug %> image"
-                                onerror="javascript:this.src='../Icons/ImageUnavailible.png'" width="100" height="100">
-                        </td>
-                        <% if (results[i].slug) { %>
-                        <td> <%= results[i].slug %> </td>
-                        <% } else { %>
-                        <td> <%= results[i].scientific_name %> </td>
+                    </thead>
+                    <tbody>
+                        <% for (let i = 0; i < results.length; i++) { %>
+                        <tr>
+                            <td> 
+                                <img class="plant_img" src="<%= results[i].image_url %>" alt="<%= results[i].slug %> image"
+                                    onerror="javascript:this.src='../Icons/ImageUnavailible.png'" width="100" height="100">
+                            </td>
+                            <% if (results[i].slug) { %>
+                            <td class="names align-middle" style="text-transform: capitalize"> 
+                                <%= results[i].slug %> 
+                            </td>
+                            <% } else { %>
+                            <td class="names align-middle" style="text-transform: capitalize">
+                                <%= results[i].scientific_name %>
+                            </td>
+                            <% } %>
+                            <td class="names align-middle">  
+                                <button class="btn btn-primary btnColoring btn-lg detailBtns" onclick="getDetails('<%= results[i].slug %>')"> Plant
+                                    Details</button>
+                            </td>
+                        </tr>
                         <% } %>
-                        <td> <button class="btn btn-primary btnColoring btn-lg btn-block my-2 detailBtns" onclick="getDetails('<%= results[i].slug %>')"> Plant
-                                Details</button>
-                        </td>
-                    </tr>
-                    <% } %>
-                </tbody>
+                    </tbody>
 
-            </table>
+                </table>
 
 
             <% if (count > 1) { %>
@@ -66,6 +78,8 @@
             <button id="nextSearchBtn" class="btn btn-primary d-none" disabled role="button"
                 value="<%= count %>">Next</button>
             <% } %>
+
+            </div>
 
         </section>
 
