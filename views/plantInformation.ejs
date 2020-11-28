@@ -43,8 +43,8 @@
       <section class="row">
         <div class="col">
           <div class="card searchStyle">
-            <img class="card-img" src="../images/back-img.png">
-            <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
+            <img class="card-img" src="../images/plantinfo-img.png">
+<!--            <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">-->
             </div>
           </div>
         </div>
@@ -126,7 +126,7 @@
                           </h3>
                           <table class="table table-striped col-auto">
                               <tbody>
-                                <tr class="table-info">
+                                <tr class="table-bordered">
                                   <th scope="row"> <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></th>
                                   <% if (data.year) {%>
                                     <td class="title">Year</td>
@@ -162,7 +162,7 @@
                                     <td>N/A</td>
                                   <% } %>
                                 </tr>
-                                  <tr class="table-info">
+                                  <tr class="table-bordered">
                                     <th scope="row"><i class="fas fa-xs fa-leaf fa-flip-horizontal"></th>
                                     <td class="title">Vegetable</td>
                                     <td><%= data.vegetable %></td>

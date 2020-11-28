@@ -28,14 +28,14 @@ h3 {
     font-size: x-large;
 }
 
+a {
+    color: #2C7776;
+}
+
 .credits {
     padding-top: 50px;
     text-align: center;
     background-color: #f0f0f0;
-}
-
-.credit-link {
-    color: #21578C;
 }
 
 .credit-text{
