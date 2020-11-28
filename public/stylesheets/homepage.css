@@ -10,6 +10,7 @@ nav {
   align-items: center;
   min-height: 8vh;
   font-family: lato, serif;
+  background-color: #f9f9f9;
 }
 
 .logo {
@@ -57,7 +58,7 @@ nav {
   /*display: grid;*/
   /*grid-template-areas: "navbar"*/
   /*                      "mainContent";*/
-  grid-template-rows: auto 1fr auto;
+  /*grid-template-rows: auto 1fr auto;*/
   background-color: #f0f0f0;
 }
 
@@ -191,7 +192,7 @@ button:active,
     right: 0px;
     height: 92vh;
     top: 8vh;
-    background-color: #f0f0f0;
+    background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
     align-items: center;
