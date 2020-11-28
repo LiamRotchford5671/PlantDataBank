@@ -10,6 +10,7 @@ nav {
   align-items: center;
   min-height: 8vh;
   font-family: lato, serif;
+  background-color: #f9f9f9;
 }
 
 .logo {
@@ -191,7 +192,7 @@ button:active,
     right: 0px;
     height: 92vh;
     top: 8vh;
-    background-color: #f0f0f0;
+    background-color: #f9f9f9;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -244,11 +245,6 @@ button:active,
   .card-text {
     font-size: 1rem;
   }
-}
-
-.gap-line {
-  width: 90%;
-  background: #6c6b6b;
 }
 
 .credits {
