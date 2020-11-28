@@ -106,20 +106,6 @@ h3 {
     color: #58c1bc;
 }
 
-.credits {
-    padding-top: 50px;
-    text-align: center;
-    background-color: #f0f0f0;
-}
-
-.credit-link {
-    color: #21578C;
-}
-
-.credit-text{
-    color: #6c6b6b;
-}
-
 @media (max-width: 850px) {
     /*for the nav bar*/
     body{
@@ -162,4 +148,17 @@ h3 {
         transform: translateX(0px);
     }
 
+}
+.credits {
+    padding-top: 50px;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.credit-link {
+    color: #21578C;
+}
+
+.credit-text{
+    color: #6c6b6b;
 }

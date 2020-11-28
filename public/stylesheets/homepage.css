@@ -58,7 +58,7 @@ nav {
   /*display: grid;*/
   /*grid-template-areas: "navbar"*/
   /*                      "mainContent";*/
-  grid-template-rows: auto 1fr auto;
+  /*grid-template-rows: auto 1fr auto;*/
   background-color: #f0f0f0;
 }
 
