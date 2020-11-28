@@ -50,6 +50,10 @@ router.get('/searchResults', async (req, res) => {
       //.then(resp => console.log(resp.data))
       .catch(err => console.error(err));
 
+    let destruct1 = searchObj.data.links.last.split('?');
+    let destruct2 = destruct1[1].split('&');
+    let lastPage = destruct2[0].split('=');
+
     res.render('searchResults', {
       results: searchObj.data.data,
       count: 1,
@@ -138,7 +142,7 @@ router.get('/plantInformation', async (req, res) => {
   let plantStr = Object.values(queryObject);
 
   let plantObj = await axios.get(urlAPI + 'plants/' + plantStr + '?token=' + token)
-    //.then(resp => console.log(resp.data.data))
+    // .then(resp => console.log(resp.data.data))
     .catch(err => console.error(err));
 
   res.render('plantInformation', {

@@ -8,6 +8,8 @@ Utilizing the [Trefle](https://trefle.io) api; create a minimalisic, simple, and
 
 ### Deployment:
 
+- https://plantbank.herokuapp.com/
+
 
 ### To Run Project Locally:
 
@@ -31,6 +33,7 @@ Utilizing the [Trefle](https://trefle.io) api; create a minimalisic, simple, and
 #### Frameworks, Libraries, & Utilizations:
 - [NodeJS](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
+- [Heroku](https://www.heroku.com/)
 - [Bootstrap](https://getbootstrap.com/)
 - [Font Awesome](https://fontawesome.com/)
 
@@ -44,6 +47,7 @@ Utilizing the [Trefle](https://trefle.io) api; create a minimalisic, simple, and
 #### Resources:
 - [ColorHexa](https://www.colorhexa.com/)
 - [Flaticon](https://www.flaticon.com/)
+- [Icon Library](https://icon-library.com/)
 - [Freepik](http://www.freepik.com/)
 - [Bootstrap Card Carousel](https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view)
 - [Mozilla Developer Documentation](https://developer.mozilla.org/en-US/)
