@@ -33,7 +33,7 @@ function getDetails(slug) {
     window.location.href = 'plantInformation?plant=' + slug;
 }
 
-// Nav bar
+
 const navSlide = function () {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');

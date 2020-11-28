@@ -108,6 +108,10 @@
       
           <% if (count > 1) { %>
               <button id="prevGenusBtn" class="btn btn-primary btn-lg btnColoring" role="button" value="<%= count %>" style="width:100px">Previous</button>
+          <% } else { %>
+                <!-- Ignore styling this or changing, created solely so the JS still works (it not visible and disabled)-->
+                <button id="prevGenusBtn" class="btn btn-primary d-none" disabled role="button"
+                    value="<%= count %>">Next</button>
           <% } %>
           <!-- <div class="position justify-content-end"> -->
           <% if (count < lastPg) { %>
