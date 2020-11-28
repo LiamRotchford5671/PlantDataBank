@@ -9,9 +9,10 @@ searchBar.addEventListener("keyup", function (evt) {
 
 function getSearchResults() {
     let searchString = document.getElementById("searchInp").value;
-    console.log(searchString);
-
-    window.location.href = 'searchResults?search=' + `${searchString}`;
+    //console.log(searchString);
+    if (searchString != '') {
+        window.location.href = 'searchResults?search=' + `${searchString}`;
+    }
 }
 
 /*Plant Genus Category Events */

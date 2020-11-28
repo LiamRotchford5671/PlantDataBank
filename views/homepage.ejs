@@ -22,12 +22,14 @@
 <body class="homepage-content">
   <nav>
     <div class="logo">
-      <a class="navbar-brand" href="/"><img class="logo-img" src="../Icons/leaves.png" alt="" />Plant Bank</a>
+      <a class="navbar-brand" aria-label="Title Home Nav link" href="/"><img class="logo-img" src="../Icons/leaves.png"
+          alt="PlantBank Icon" />Plant
+        Bank</a>
     </div>
     <ul class="nav-links">
-      <li class="nav-item"><a class="link" href="/">Home</a></li>
-      <li class="nav-item"><a class="link" href="/about">About</a></li>
-      <li class="nav-item"><a class="link" href="/reference">Reference</a></li>
+      <li class="nav-item"><a class="link" aria-label="Home Nav link" href="/">Home</a></li>
+      <li class="nav-item"><a class="link" aria-label="About Nav link" href="/about">About</a></li>
+      <li class="nav-item"><a class="link" aria-label="Reference Nav link" href="/reference">Reference</a></li>
     </ul>
     <div class="burger">
       <div class="line1"></div>
@@ -39,11 +41,12 @@
   <section class="row">
     <div class="col">
       <div class="card searchStyle">
-        <img class="card-img" src="../images/back-img.png">
+        <img class="card-img" src="../images/back-img.png" alt="">
         <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
           <div class="input-group input-group-lg input-group-append">
             <div class="input-group-append">
-              <button class="input-group-text" id="searchBtn" onclick="getSearchResults()">Search</button>
+              <button class="input-group-text" aria-label="Search Button" id="searchBtn"
+                onclick="getSearchResults()">Search</button>
             </div>
             <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
           </div>
@@ -57,7 +60,7 @@
     <section id="mainContent">
 
       <section class="row justify-content-center rowSpacingGenus mb-1" aria-label="Genus Title">
-        <h1 class="text-dark" role="title">
+        <h1 class="text-dark titleHeaders" role="title">
           <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
           Plant Genus Categories
           <i class="fas fa-xs fa-leaf"></i>
@@ -158,7 +161,7 @@
       </section>
 
       <section class="row justify-content-center rowSpacingSgts mb-1" aria-label="Suggestions Title">
-        <h1 class="text-dark" role="title">
+        <h1 class="text-dark titleHeaders" role="title">
           <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
           Suggestions
           <i class="fas fa-xs fa-leaf"></i>
@@ -304,19 +307,17 @@
           </div>
 
           <div class="controls" aria-label="Suggestions Slider Controls">
-            <a class="btn text-light btnColoring mt-2 ml-3 col-1" href="#suggestions" role="link button"
+            <a class="btn text-light btnColoring mt-2 ml-3 col-sm-2 col-3" href="#suggestions" role="link button"
               aria-label="Present Previous Slide of Suggestions" data-slide="prev"><i
                 class="fas fa-2x fa-arrow-circle-left"></i></a>
 
-            <a class="btn text-light btnColoring mt-2 mr-3 col-1" href="#suggestions" role="link button"
+            <a class="btn text-light btnColoring mt-2 mr-3 col-sm-2 col-3" href="#suggestions" role="link button"
               aria-label="Present Next Slide of Suggestions" style="float:right" data-slide="next"><i
                 class="fas fa-2x fa-arrow-circle-right"></i></a>
           </div>
         </div>
       </section>
     </section>
-
-<!--    <script src="/public/javascripts/homepage.js"></script>-->
 
     <script type="text/javascript" src="../javascripts/homepage.js"></script>
 
@@ -338,7 +339,7 @@
 </body>
 
 
-<footer class="credits" font-size="small">
+<footer class="credits" aria-label="Footer Team Names" font-size="small">
   <p class="credit-text">Plant Bank</p>
   <p class="credit-text">Authored by: Iris Li, Liam Rotchford, Yufei Tao</p>
 </footer>
