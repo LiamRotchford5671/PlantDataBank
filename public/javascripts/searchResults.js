@@ -36,6 +36,22 @@ function getDetails(slug) {
     window.location.href = 'plantInformation?plant=' + slug;
 }
 
+/* Search Bar  */
+let searchBar = document.getElementById("searchInp");
+
+searchBar.addEventListener("keyup", function (evt) {
+    if (evt.key === 'Enter') {
+        document.getElementById("searchBtn").click();
+    }
+});
+
+function getSearchResults() {
+    let searchString = document.getElementById("searchInp").value;
+    console.log(searchString);
+
+    window.location.href = 'searchResults?search=' + `${searchString}`;
+}
+
 // Nav bar
 const navSlide = function () {
     const burger = document.querySelector('.burger');
