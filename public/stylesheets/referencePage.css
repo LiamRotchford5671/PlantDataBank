@@ -32,16 +32,6 @@ a {
     color: #2C7776;
 }
 
-.credits {
-    padding-top: 50px;
-    text-align: center;
-    background-color: #f0f0f0;
-}
-
-.credit-text{
-    color: #6c6b6b;
-}
-
 * {
     margin: 0px;
     padding: 0px;
@@ -145,4 +135,14 @@ nav {
         opacity: 1;
         transform: translateX(0px);
     }
+}
+
+.credits {
+    padding-top: 50px;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.credit-text{
+    color: #6c6b6b;
 }
