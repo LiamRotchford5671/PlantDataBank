@@ -2,148 +2,152 @@
 <html lang="en">
 
 <head>
-    <title>Search Results</title>
+  <title>Search Results</title>
 
-    <meta charset="UTF-8">
-    <meta name="description" content="Search plants and displays results by utilizing the Trefle.io plant API">
-    <meta name="keywords" content="EJS, CSS, JavaScript, Express (Node), Bootstrap, Font Awesome">
-    <meta name="author" content="Yan Li">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="description" content="Search plants and displays results by utilizing the Trefle.io plant API">
+  <meta name="keywords" content="EJS, CSS, JavaScript, Express (Node), Bootstrap, Font Awesome">
+  <meta name="author" content="Yan Li">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://kit.fontawesome.com/31a00af4ac.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/31a00af4ac.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
-    <link rel='stylesheet' href='/stylesheets/result.css' />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='/stylesheets/result.css' />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
 
 </head>
 
 <body class="homepage-content">
-    <nav>
-      <div class="logo">
-        <a class="navbar-brand" href="/"><img class="logo-img" src="../Icons/leaves.png" alt="" />Plant Bank</a>
-      </div>
-      <ul class="nav-links">
-        <li class="nav-item"><a class="link" href="/">Home</a></li>
-        <li class="nav-item"><a class="link" href="/about">About</a></li>
-        <li class="nav-item"><a class="link" href="/reference">Reference</a></li>
-      </ul>
-      <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-      </div>
-    </nav>
-  
-    <section class="row">
-      <div class="col">
-        <div class="card searchStyle">
-          <img class="card-img" src="../images/back-img.png">
-          <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
-            <div class="input-group input-group-lg input-group-append">
-              <div class="input-group-append">
-                <button class="input-group-text" id="searchBtn" onclick="getSearchResults()">Search</button>
-              </div>
-              <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
+  <nav>
+    <div class="logo">
+      <a class="navbar-brand" aria-label="Title Home Nav link" href="/"><img class="logo-img" src="../Icons/leaves.png"
+          alt="" />Plant Bank</a>
+    </div>
+    <ul class="nav-links">
+      <li class="nav-item" aria-label="Home Nav link"><a class="link" href="/">Home</a></li>
+      <li class="nav-item" aria-label="About Nav link"><a class="link" href="/about">About</a></li>
+      <li class="nav-item" aria-label="Reference Nav link"><a class="link" href="/reference">Reference</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+
+  <section class="row">
+    <div class="col">
+      <div class="card searchStyle">
+        <img class="card-img" src="../images/back-img.png" alt="">
+        <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">
+          <div class="input-group input-group-lg input-group-append">
+            <div class="input-group-append">
+              <button class="input-group-text" id="searchBtn" onclick="getSearchResults()">Search</button>
             </div>
+            <input type="text" class="form-control" id="searchInp" aria-label="SearchBar">
           </div>
         </div>
       </div>
-    </section>
-    
-    <!-- Header or name of the plant -->
-    <section class="row justify-content-center gap">
-        <h1 class="text-center">
-            <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
-                Search Results
-            <i class="fas fa-xs fa-leaf"></i>
-        </h1>
-    </section> 
+    </div>
+  </section>
 
-    <!-- the header and search bar -->
-    <section class="d-flex justify-content-center mb-5">
+  <!-- Header or name of the plant -->
+  <section class="row justify-content-center gap">
+    <h1 class="text-center">
+      <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
+      Search Results
+      <i class="fas fa-xs fa-leaf"></i>
+    </h1>
+  </section>
 
-        <div class="container tableContainer m-3 p-3">
-            <section class="row theRow" aria-label="Results_row">
-                <table class="table text-dark table-striped table-bordered" id="table" class="text-dark" data-toggle="table" >
-                    <thead class="head_title text-white">
-                    <tr>
-                        <th>
-                        <h4>IMAGE</h4>
-                        </th>
-                        <th>
-                        <h4>NAME</h4>
-                        </th>
-                        <th>
-                        <h4>MORE INFORMATION</h4>
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                        <% for (let i = 0; i < results.length; i++) { %>
-                        <tr>
-                            <td> 
-                                <img class="plant_img" src="<%= results[i].image_url %>" alt="<%= results[i].slug %> image"
-                                    onerror="javascript:this.src='../Icons/ImageUnavailible.png'" width="100" height="100">
-                            </td>
-                            <% if (results[i].slug) { %>
-                            <td class="names align-middle" style="text-transform: capitalize"> 
-                                <%= results[i].slug %> 
-                            </td>
-                            <% } else { %>
-                            <td class="names align-middle" style="text-transform: capitalize">
-                                <%= results[i].scientific_name %>
-                            </td>
-                            <% } %>
-                            <td class="names align-middle">  
-                                <button class="btn btn-primary btnColoring btn-lg detailBtns" onclick="getDetails('<%= results[i].slug %>')"> Plant
-                                    Details</button>
-                            </td>
-                        </tr>
-                        <% } %>
-                    </tbody>
+  <!-- the header and search bar -->
+  <section class="container d-flex justify-content-center mb-5">
 
-                </table>
-    
-            </section>
-
-            <% if (count > 1) { %>
-            <button id="prevSearchBtn" class="btn btn-primary btnColoring btn-lg" role="button" value="<%= count %>" style="width:100px">Previous</button>
-            <% } else { %>
-                <!-- Ignore styling this or changing, created solely so the JS still works (it not visible and disabled)-->
-                <button id="prevSearchBtn" class="btn btn-primary d-none" disabled role="button"
-                    value="<%= count %>">Next</button>
+    <div class="tableContainer col-sm-3 col-md-11 col-lg-11">
+      <section class="row theRow" aria-label="Results_row">
+        <table class="table text-dark table-striped table-bordered" id="table" class="text-dark" data-toggle="table">
+          <thead class="head_title text-white">
+            <tr>
+              <th>
+                <h2>IMAGE</h2>
+              </th>
+              <th>
+                <h2>NAME</h2>
+              </th>
+              <th>
+                <h2>PLANT DEATAILS</h2>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <% for (let i = 0; i < results.length; i++) { %>
+            <tr>
+              <td>
+                <img class="plant_img" src="<%= results[i].image_url %>" alt="<%= results[i].slug %> image"
+                  onerror="javascript:this.src='../Icons/ImageUnavailible.png'" width="100" height="100">
+              </td>
+              <% if (results[i].slug) { %>
+              <td class="names align-middle" style="text-transform: capitalize">
+                <%= results[i].slug %>
+              </td>
+              <% } else { %>
+              <td class="names align-middle" style="text-transform: capitalize">
+                <%= results[i].scientific_name %>
+              </td>
+              <% } %>
+              <td class="names align-middle">
+                <button class="btn btn-primary btnColoring btn-lg detailBtns"
+                  onclick="getDetails('<%= results[i].slug %>')"> Plant
+                  Details</button>
+              </td>
+            </tr>
             <% } %>
+          </tbody>
 
-            <% if (count < lastPg) { %>
-            <button id="nextSearchBtn" class="btn btn-primary btnColoring btn-lg float-right" role="button" value="<%= count %>" style="width: 100px">Next</button>
-            <% } else { %>
-            <!-- Ignore styling this or changing, created solely so the JS still works (it not visible and disabled)-->
-            <button id="nextSearchBtn" class="btn btn-primary d-none" disabled role="button"
-                value="<%= count %>">Next</button>
-            <% } %>
+        </table>
 
-            <footer class="credits" font-size="small">
-                <p class="credit-text">Plant Bank</p>
-                <p class="credit-text">Authored by: Iris Li, Liam Rotchford, Yufei Tao</p>
-            </footer>
-       </div>
-    </section>   
-            <script type="text/javascript" src="../javascripts/searchResults.js"></script>
+      </section>
 
-            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-            </script>
+      <% if (count > 1) { %>
+      <button id="prevSearchBtn" class="btn btn-primary btnColoring btn-lg" role="button" value="<%= count %>"
+        style="width:100px" aria-label="Previous button of table results">Previous</button>
+      <% } else { %>
+      <!-- Ignore styling this or changing, created solely so the JS still works (it not visible and disabled)-->
+      <button id="prevSearchBtn" class="btn btn-primary d-none" disabled role="button"
+        value="<%= count %>">Previous</button>
+      <% } %>
 
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-            </script>
+      <% if (count < lastPg) { %>
+      <button id="nextSearchBtn" class="btn btn-primary btnColoring btn-lg float-right" role="button"
+        value="<%= count %>" style="width: 100px" aria-label="Next button of table results">Next</button>
+      <% } else { %>
+      <!-- Ignore styling this or changing, created solely so the JS still works (it not visible and disabled)-->
+      <button id="nextSearchBtn" class="btn btn-primary d-none" disabled role="button"
+        value="<%= count %>">Next</button>
+      <% } %>
 
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-            </script>
+      <footer class="credits" font-size="small" aria-label="Footer Team Names">
+        <p class="credit-text">Plant Bank</p>
+        <p class="credit-text">Authored by: Iris Li, Liam Rotchford, Yufei Tao</p>
+      </footer>
+    </div>
+  </section>
+  <script type="text/javascript" src="../javascripts/searchResults.js"></script>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
 
 
 </body>

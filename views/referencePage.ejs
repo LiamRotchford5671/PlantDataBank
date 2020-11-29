@@ -11,7 +11,7 @@
     <title>Plant Bank Homepage</title>
     <script src="https://kit.fontawesome.com/31a00af4ac.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <link rel='stylesheet' href='/stylesheets/referencePage.css' />
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,80 +19,134 @@
 </head>
 
 <body>
-<!--search bar area-->
-<nav>
-    <div class="logo">
-        <a class="navbar-brand" href="/"><img class="logo-img" src="../Icons/leaves.png" alt="" />Plant Bank</a>
-    </div>
-    <ul class="nav-links">
-        <li class="nav-item"><a class="link" href="/">Home</a></li>
-        <li class="nav-item"><a class="link" href="/about">About</a></li>
-        <li class="nav-item"><a class="link" href="/reference">Reference</a></li>
-    </ul>
-    <div class="burger">
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
-    </div>
-</nav>
 
-<section class="referencePage">
-    <section class="mainContent">
-        <h1 class="title-text:">Reference</h1>
-        <h2 class="title mb-3">Languages, Frameworks & Libraries:</h2>
-        <h3>Languages:</h3>
-        <ul class="list">
-            <li>EJS (HTML)</li>
-            <li>CSS</li>
-            <li>Javascript</li>
+    <nav>
+        <div class="logo">
+            <a class="navbar-brand" aria-label="Title Home Nav link" href="/"><img class="logo-img"
+                    src="../Icons/leaves.png" alt="" />Plant Bank</a>
+        </div>
+        <ul class="nav-links">
+            <li class="nav-item" aria-label="Home Nav link"><a class="link" href="/">Home</a></li>
+            <li class="nav-item" aria-label="About Nav link"><a class="link" href="/about">About</a></li>
+            <li class="nav-item" aria-label="Reference Nav link"><a class="link" href="/reference">Reference</a></li>
         </ul>
-        
-        <h3>API:</h3>
-        <ul class="list">
-            <li><a class="last" href="https://trefle.io/about">Trefle</a></li>
-        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
 
-        <h3>Frameworks, Libraries, & Utilizations:</h3>
-        <ul class="list">
-            <li><a href="https://expressjs.com/">NodeJS</a></li>
-            <li><a href="https://expressjs.com/">Express</a></li>
-            <li><a href="https://getbootstrap.com/">Bootstrap</a></li>
-            <li><a href="https://fontawesome.com/">Font Awesome</a></li>
-        </ul>
+    <section class="referencePage container-fluid">
+        <section class="mainContent col-12">
+            <div class="mb-4 d-flex justify-content-center">
+                <h1 class="refTitle" aria-label="Reference Title">
+                    <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
+                    Project References
+                    <i class="fas fa-xs fa-leaf"></i>
+                </h1>
+            </div>
+            <h2 class="title mb-4" aria-label="Languages, Frameworks, and Libraries list">
+                Languages, Frameworks, Libraries:</h2>
+            <h3 class="font-weight-bold">Languages:</h3>
+            <ul class="list">
+                <h3>
+                    <li aria-label="EJS">EJS (HTML)</li>
+                </h3>
+                <h3>
+                    <li aria-label="CSS">CSS</li>
+                </h3>
+                <h3>
+                    <li aria-label="Javascript">Javascript</li>
+                </h3>
+            </ul>
 
-        <h3>Npm Packages:</h3>
-        <ul class="list-last">
-            <li><a href="https://www.npmjs.com/package/nodemon">Nodemon</a></li>
-            <li><a href="https://www.npmjs.com/package/axios">Axios</a></li>
-        </ul>
+            <h3 class="font-weight-bold">API:</h3>
+            <ul class="list">
+                <h3>
+                    <li aria-label="API Site Link"><a class="last" href="https://trefle.io/">Trefle</a></li>
+                </h3>
+            </ul>
 
-        <h2 class="title mb-3">Additional Resources Used:</h2>
-        <h3>Resources:</h3>
-        <ul class="list">
-            <li><a href="https://www.colorhexa.com/">ColorHexa</a></li>
-            <li><a href="https://www.flaticon.com/">Flaticon</a></li>
-            <li><a href="http://www.freepik.com/">Freepik</a></li>
-            <li><a href="https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view">Bootstrap Card Carousel </a></li>
-            <li><a href="https://developer.mozilla.org/en-US/">Mozilla Developer Documentation</a></li>
-            <li><a href="https://icon-library.com/">Icon Library</a></li>
+            <h3 class="font-weight-bold">Frameworks, Libraries, & Utilizations:</h3>
+            <ul class="list">
+                <h3>
+                    <li aria-label="NodeJS"><a href="https://nodejs.org/en/">NodeJS</a></li>
+                </h3>
+                <h3>
+                    <li aria-label="Express"><a href="https://expressjs.com/">Express</a></li>
+                </h3>
+                <h3>
+                    <li aria-label="Bootstrap"><a href="https://getbootstrap.com/">Bootstrap</a></li>
+                </h3>
+                <h3>
+                    <li aria-label="Font Awesome"><a href="https://fontawesome.com/">Font Awesome</a></li>
+                </h3>
+            </ul>
 
-        </ul>
+            <h3 class="font-weight-bold">Npm Packages:</h3>
+            <ul class="list-last">
+                <h3>
+                    <li aria-label="nodemon NPM package"><a href="https://www.npmjs.com/package/nodemon">Nodemon</a>
+                    </li>
+                </h3>
+                <h3>
+                    <li aria-label="axios NPM package"><a href="https://www.npmjs.com/package/axios">Axios</a></li>
+                </h3>
+            </ul>
 
-        <h3>Accessiblity:</h3>
-        <ul class="list">
-            <li><a href="https://webaim.org/techniques/aria/">Accessible Rich Internet Applications (ARIA)</a></li>
-            <li><a href="https://webaim.org/resources/contrastchecker/">WebAim Contrast Checker</a></li>
-            <li><a href="https://wave.webaim.org/extension/">Wave Accessibility Check Extension</a></li>
-        </ul>
+            <h2 class="title mb-4 mt-3" aria-label="Additional Resources">Additional Resources Used:</h2>
+            <h3 class="font-weight-bold">Resources:</h3>
+            <ul class="list">
+                <h3>
+                    <li aria-label="ColorHexa link"><a href="https://www.colorhexa.com/">ColorHexa</a></li>
+                </h3>
+                <h3>
+                    <li aria-label="Flaticon link"><a href="https://www.flaticon.com/">Flaticon</a></li>
+                </h3>
+                <h3>
+                    <li aria-label="Freepik link"><a href="http://www.freepik.com/">Freepik</a></li>
+                </h3>
+                <h3>
+                    <li aria-label="Card Carousel Example link"><a
+                            href="https://mdbootstrap.com/snippets/jquery/alexpiffero-it/696600#html-tab-view">Bootstrap
+                            Card Carousel </a></li>
+                </h3>
+                <h3>
+                    <li aria-label="Mozilla Web Dev Docs link"><a href="https://developer.mozilla.org/en-US/">Mozilla
+                            Developer Documentation</a></li>
+                </h3>
+                <h3>
+                    <li aria-label="Icon library link"><a href="https://icon-library.com/">Icon Library</a></li>
+                </h3>
+
+            </ul>
+
+            <h3 class="font-weight-bold">Accessiblity:</h3>
+            <ul class="list">
+                <h3>
+                    <li aria-label="ARIA Docs link"><a href="https://webaim.org/techniques/aria/">Accessible Rich
+                            Internet
+                            Applications (ARIA)</a></li>
+                </h3>
+                <h3>
+                    <li aria-label="WebAim Contrast Checker link"><a
+                            href="https://webaim.org/resources/contrastchecker/">WebAim Contrast Checker</a></li>
+                </h3>
+                <h3>
+                    <li aria-label="Wave extension link"><a href="https://wave.webaim.org/extension/">Wave Accessibility
+                            Check Extension</a></li>
+                </h3>
+            </ul>
 
 
+        </section>
+        <script type="text/javascript" src="../javascripts/reference.js"></script>
     </section>
-    <script type="text/javascript" src="../javascripts/reference.js"></script>
-</section>
 
 </body>
 
-<footer class="credits" font-size="small">
+<footer class="credits" font-size="small" aria-label="Footer Team Names">
     <p class="credit-text">Plant Bank</p>
     <p class="credit-text">Authored by: Iris Li, Liam Rotchford, Yufei Tao</p>
 </footer>

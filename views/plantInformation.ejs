@@ -1,208 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!DOCTYPE html>
-    <html lang="en">
-    
-    <head>
+<!DOCTYPE html>
+<html lang="en">
 
-      <meta charset="UTF-8">
-      <meta name="description" content="PlantBank information application utilizing the Trefle.io plant API">
-      <meta name="keywords" content="EJS, CSS, JavaScript, Express (Node), Bootstrap, Font Awesome">
-      <meta name="author" content="Yan Li">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-      <title>Plant Information Page</title>
-      <script src="https://kit.fontawesome.com/31a00af4ac.js" crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    
-      <link rel='stylesheet' href='/stylesheets/plantInformation.css' />
+<head>
 
-      <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
-    
-    </head>
+  <meta charset="UTF-8">
+  <meta name="description" content="PlantBank information application utilizing the Trefle.io plant API">
+  <meta name="keywords" content="EJS, CSS, JavaScript, Express (Node), Bootstrap, Font Awesome">
+  <meta name="author" content="Yan Li">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <body class="homepage-content">
-      <nav>
-        <div class="logo">
-          <a class="navbar-brand" href="/"><img class="logo-img" src="../Icons/leaves.png" alt="" />Plant Bank</a>
-        </div>
-        <ul class="nav-links">
-          <li class="nav-item"><a class="link" href="/">Home</a></li>
-          <li class="nav-item"><a class="link" href="/about">About</a></li>
-          <li class="nav-item"><a class="link" href="/reference">Reference</a></li>
-        </ul>
-        <div class="burger">
-          <div class="line1"></div>
-          <div class="line2"></div>
-          <div class="line3"></div>
-        </div>
-      </nav>
-    
-      <section class="row">
-        <div class="col">
-          <div class="card searchStyle">
-            <img class="card-img" src="../images/plantinfo-img.png">
-<!--            <div class="card-img-overlay d-flex mx-auto align-items-center col-lg-10 col-12">-->
-            </div>
+  <title>Plant Information Page</title>
+  <script src="https://kit.fontawesome.com/31a00af4ac.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+  <link rel='stylesheet' href='/stylesheets/plantInformation.css' />
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="homepage-content">
+  <nav>
+    <div class="logo">
+      <a class="navbar-brand" aria-label="Title Home Nav link" href="/"><img class="logo-img" src="../Icons/leaves.png"
+          alt="" />Plant Bank</a>
+    </div>
+    <ul class="nav-links">
+      <li class="nav-item" aria-label="Home Nav link"><a class="link" href="/">Home</a></li>
+      <li class="nav-item" aria-label="About Nav link"><a class="link" href="/about">About</a></li>
+      <li class="nav-item" aria-label="Reference Nav link"><a class="link" href="/reference">Reference</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
+
+  <section class="row">
+    <div class="col">
+      <div class="card searchStyle">
+        <img class="card-img" src="../images/plantinfo-img.png" alt="">
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Header or name of the plant -->
+  <section class="row justify-content-center gapSpace mt-5">
+    <h1 class="text-center">
+      <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
+      <% if (data.common_name) {%>
+      <span class="text-center " aria-label="Plant Name"
+        style="text-transform: capitalize"><%= data.common_name %></span>
+      <% } else { %>
+      <span class="text-center" aria-label="Plant Name"><%= data.scientific_name %></span>
+
+      <% } %>
+      <i class="fas fa-xs fa-leaf"></i>
+    </h1>
+  </section>
+
+
+  <!-- Container for plant info body -->
+  <section class="container pageContainer mt-1 rounded">
+    <!-- first row first col -->
+    <section class="row theRow1" aria-label="Plant Info First Row">
+      <div class="space1 col-6 mt-3 d-flex mx-auto theCol1" aria-label="space1_img">
+        <% if (data.image_url) {%>
+        <img class="plant_img mt-4 mb-3 ml-1" src="<%= data.image_url %>" height="500px" width="450px"
+          alt="<%= data.slug %> image">
+        <% } else { %>
+        <img class="plant_img mt-4 mb-3 ml-5" src="../images/no-image-available-icon-13.jpg" height="500px"
+          width="450px" alt="<%= data.slug %> image">
+        <% } %>
+      </div>
+
+      <!-- first row second col -->
+      <div class="space2 col-6 mt-3 theCol2 " aria-label="space2_info1">
+        <div class="theText mt-4 mb-5 p-2">
+          <i class="fas fa-seedling fa-lg fa-flip-horizontal"></i>
+          <div class="list_case">
+            <ul class="list_id ml-2 mr-5 p-1">
+              <li class="list_item text-left " aria-label="Plant Scientific Name">Scientific Name:
+                <div class="pInfo">
+                  <%= data.scientific_name %>
+                </div>
+              </li>
+              <li class="list_item text-left " aria-label="Genus Name">Genus Name:
+                <div class="pInfo">
+                  <%= data.genus.name %>
+                </div>
+              </li>
+              <li class="list_item text-left " aria-label="Plant Family Name">Family:
+                <div class="pInfo">
+                  <%= data.main_species.family %>
+                </div>
+              </li>
+              <li class="list_item text-left " aria-label="Family Common Name">Family Common Name:
+                <div class="pInfo">
+                  <%= data.family_common_name %>
+                </div>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
-      
-        <!-- Header or name of the plant -->
-        <section class="row justify-content-center gapSpace mt-5">
-            <h1 class="text-center">
-                <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
-                <% if (data.common_name) {%>
-                        <span class="text-center " style="text-transform: capitalize"><%= data.common_name %></span>
-                <% } else { %> 
-                        <span class="text-center"><%= data.scientific_name %></span> 
-                
-                <% } %>
-                <i class="fas fa-xs fa-leaf"></i>
-            </h1>
-        </section> 
+
+      </div>
+    </section>
+
+    <!-- second row  -->
+    <section class="row theRow2" aria-label="Plant Info Second Row">
+      <div class="card space3 col-lg-12 col-md-12 col-sm-6 mt-3 d-flex mx-auto my-auto align-items-center theCol3 "
+        aria-label="space1_img">
+        <!-- table -->
+        <h1 class="tableTitle mt-5 mb-4">
+          <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
+          More Details
+          <i class="fas fa-xs fa-leaf"></i>
+        </h1>
+        <table class="table table-striped col-auto">
+          <tbody>
+            <tr class="table-bordered">
+              <th scope="row">`<i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></th>
+              <% if (data.year) {%>
+              <td class="title" aria-label="Year Discovered">Year</td>
+              <td class="title_info"><%= data.year %></td>
+              <% } else { %>
+              <td class="title" aria-label="Year Discovered">Year</td>
+              <td>N/A</td>
+              <% } %>
+              <td class="title">`<i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></td>
+              <% if (data.observations) {%>
+              <td class="title" aria-label="Location Discovered">Location</td>
+              <td><%= data.observations %></td>
+              <% } else { %>
+              <td class="title" aria-label="Location Discovered">Location</td>
+              <td>N/A</td>
+              <% } %>
+            </tr>
+            <tr>
+              <th scope="row">`<i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></th>
+              <% if (data.author) {%>
+              <td class="title" aria-label="Discoverer">Author</td>
+              <td><%= data.author %></td>
+              <% } else { %>
+              <td class="title " aria-label="Discoverer">Author</td>
+              <td>N/A</td>
+              <% } %>
+              <td class="title">`<i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></td>
+              <% if (data.Bibliography) {%>
+              <td class="title" aria-label="Bibliography">Bibliography</td>
+              <td><%= data.Bibliography %></td>
+              <% } else { %>
+              <td class="title" aria-label="Bibliography">Bibliography</td>
+              <td>N/A</td>
+              <% } %>
+            </tr>
+            <tr class="table-bordered">
+              <th scope="row">`<i class="fas fa-xs fa-leaf fa-flip-horizontal"></th>
+              <td class="title" aria-label="Vegatable Status">Vegetable</td>
+              <td><%= data.vegetable %></td>
+              <td class="title">`<i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></td>
+              <td class="title" aria-label="Edible Status">Edible</td>
+              <td><%= data.main_species.edible %></td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </section>
+
+  </section>
 
 
-        <!-- Container for plant info body -->
-       <section class="container pageContainer mt-1 rounded"> 
-            <!-- first row first col -->
-            <section class="row theRow1" aria-label="Plant Info First Row">
-                <div class="space1 col-lg-6 col-md-12 col-sm-6 mt-3 d-flex mx-auto  align-items-center theCol1" 
-                             aria-label="space1_img">
-                  <% if (data.image_url) {%>
-                      <img class="plant_img mt-4 mb-3 ml-5" src="<%= data.image_url %>" height="500px" width="450px" 
-                                alt="<%= data.slug %> image">     
-                  <% } else { %> 
-                    <img class="plant_img mt-4 mb-3 ml-5" src="../images/no-image-available-icon-13.jpg" height="500px" width="450px" 
-                                alt="<%= data.slug %> image">            
-                  <% } %>
-                </div>
-            
-            <!-- first row second col -->
-            <div class="space2 col-lg-6 col-md-12 col-sm-6 mt-3 d-flex align-items-center theCol2 "
-                          aria-label="space2_info1"> 
-                              <div class="theText mt-5 mb-5 mr-5 p-4">
-                                <i class="fas fa-seedling fa-lg fa-flip-horizontal"></i>
-                                    <div class="list_case">
-                                      <ul class="list_id mt-4 ml-2 mr-5 mb-4 p-5">
-                                        <li class="list_item text-left ">Scientific Name: 
-                                          <div class="pInfo">
-                                            <%= data.scientific_name %>
-                                          </div>
-                                        </li>
-                                        <li class="list_item text-left ">Genus Name: 
-                                          <div class="pInfo">
-                                            <%= data.genus.name %>
-                                          </div>
-                                        </li>
-                                        <li class="list_item text-left ">Family: 
-                                          <div class="pInfo">
-                                            <%= data.main_species.family %>
-                                          </div>
-                                        </li>
-                                        <li class="list_item text-left ">Family Common Name: 
-                                          <div class="pInfo">
-                                            <%= data.family_common_name %>
-                                          </div>
-                                        </li>
-                                      </ul>
-                                    </div>
-                                </div>
-                              
-             </div>
-          </section>  
+  <script type="text/javascript" src="../javascripts/plantInfo.js"></script>
 
-          <!-- second row  -->
-          <section class="row theRow2" aria-label="Plant Info Second Row">
-              <div class="card space3 col-lg-12 col-md-12 col-sm-6 mt-3 d-flex mx-auto my-auto align-items-center theCol3 " 
-                          aria-label="space1_img"> 
-                          <!-- table -->
-                          <h3 class="tableTitle mt-5 mb-4">
-                          <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
-                          More Details
-                          <i class="fas fa-xs fa-leaf"></i>
-                          </h3>
-                          <table class="table table-striped col-auto">
-                              <tbody>
-                                <tr class="table-bordered">
-                                  <th scope="row"> <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></th>
-                                  <% if (data.year) {%>
-                                    <td class="title">Year</td>
-                                    <td class="title_info"><%= data.year %></td>
-                                  <% } else { %> 
-                                    <td class="title">Year</td>
-                                    <td>N/A</td>
-                                  <% } %>
-                                    <td class="title"><i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></td>
-                                  <% if (data.observations) {%>
-                                    <td class="title">Location</td>
-                                    <td><%= data.observations %></td>
-                                  <% } else { %> 
-                                    <td class="title">Loation</td>
-                                    <td>N/A</td>
-                                  <% } %>
-                                </tr>
-                                <tr>
-                                  <th scope="row"><i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></th>
-                                  <% if (data.author) {%>
-                                    <td class="title">Author</td>
-                                    <td><%= data.author %></td>
-                                  <% } else { %> 
-                                    <td class="title">Author</td>
-                                    <td>N/A</td>
-                                  <% } %>
-                                    <td class="title" ><i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></td>
-                                  <% if (data.Bibliography) {%>
-                                    <td class="title">Bibliography</td>
-                                    <td><%= data.Bibliography %></td>
-                                  <% } else { %> 
-                                    <td class="title">Bibliography</td>
-                                    <td>N/A</td>
-                                  <% } %>
-                                </tr>
-                                  <tr class="table-bordered">
-                                    <th scope="row"><i class="fas fa-xs fa-leaf fa-flip-horizontal"></th>
-                                    <td class="title">Vegetable</td>
-                                    <td><%= data.vegetable %></td>
-                                    <td class="title"><i class="fas fa-xs fa-leaf fa-flip-horizontal"></i></td>
-                                    <td class="title">Edible</td>
-                                    <td><%= data.main_species.edible %></td>
-                                </tr>
-                              </tbody>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
 
-                          </table>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
 
-              </div>
-
-        </section>
-                    
-      </section>
-
-
-    <script type="text/javascript" src="../javascripts/plantInfo.js"></script>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
-
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
 
 
 </body>
 
-       
-    
-    <footer class="credits" font-size="small">
-      <p class="credit-text">Plant Bank</p>
-      <p class="credit-text">Authored by: Iris Li, Liam Rotchford, Yufei Tao</p>
-    </footer>
+
+
+<footer class="credits" font-size="small" aria-label="Footer Team Names">
+  <p class="credit-text">Plant Bank</p>
+  <p class="credit-text">Authored by: Iris Li, Liam Rotchford, Yufei Tao</p>
+</footer>
 
 </html>

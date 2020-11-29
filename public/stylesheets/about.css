@@ -20,7 +20,7 @@ nav {
     font-size: 30px;
 }
 
-.nav-links{
+.nav-links {
     padding-top: 1rem;
     display: flex;
     justify-content: space-around;
@@ -39,7 +39,7 @@ nav {
     font-size: 22px;
 }
 
-.burger{
+.burger {
     display: none;
     cursor: pointer;
 }
@@ -71,6 +71,12 @@ nav {
 
 body {
     background-color: #f0f0f0;
+    max-width: 100% !important;
+}
+
+img {
+    width: 100%;
+    height: auto;
 }
 
 .aboutPage {
@@ -80,12 +86,13 @@ body {
 
     /*display: grid;*/
     grid-template-areas: "navbar"
-                         "mainContent"
-                         "footer";
+        "mainContent"
+        "footer";
     grid-template-rows: auto 1fr auto;
 }
-.mainContent{
-    padding: 150px 100px;
+
+.mainContent {
+    padding: 60px;
 }
 
 a {
@@ -101,16 +108,18 @@ h3 {
 }
 
 .link:hover,
-.navbar-brand:hover{
+.navbar-brand:hover {
     text-decoration: none;
     color: #58c1bc;
 }
 
 @media (max-width: 850px) {
+
     /*for the nav bar*/
-    body{
+    body {
         overflow-x: hidden;
     }
+
     .nav-links {
         z-index: 1;
         position: absolute;
@@ -125,6 +134,7 @@ h3 {
         transform: translateX(100%);
         transition: transform 0.5s ease-in;
     }
+
     .nav-links li {
         opacity: 0;
     }
@@ -132,23 +142,63 @@ h3 {
     .burger {
         display: block;
     }
+
+    .mainContent {
+        padding: 30px;
+    }
 }
 
-.nav-active{
+.nav-active {
     transform: translateX(0%);
 }
 
 @keyframes navLinkFade {
-    from{
+    from {
         opacity: 0;
         transform: translateX(50px);
     }
-    to{
+
+    to {
         opacity: 1;
         transform: translateX(0px);
     }
 
 }
+
+/* Small devices (landscape phones, 544px and up) */
+@media (min-width: 300px) {
+    .navbar-brand {
+        font-size: 1.8rem;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    .navbar-brand {
+        font-size: 3rem;
+    }
+}
+
+
+.logo>a:hover,
+.logo>a:active,
+.logo>a:focus {
+    border-left: 3px solid #58c1bc;
+    border-right: 3px solid #58c1bc;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 2%;
+}
+
+.nav-links>li>a:hover,
+.nav-links>li>a:active,
+.nav-links>li>a:focus {
+    padding-bottom: 2px;
+    border-bottom: 3px solid#58c1bc;
+    border-radius: 4%;
+}
+
+
 .credits {
     padding-top: 50px;
     text-align: center;
@@ -159,6 +209,6 @@ h3 {
     color: #21578C;
 }
 
-.credit-text{
+.credit-text {
     color: #6c6b6b;
 }

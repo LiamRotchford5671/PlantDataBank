@@ -11,7 +11,7 @@
   <title>Plant Bank Homepage</title>
   <script src="https://kit.fontawesome.com/31a00af4ac.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
   <link rel='stylesheet' href='/stylesheets/about.css' />
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -19,59 +19,86 @@
 </head>
 
 <body>
-<nav>
-  <div class="logo">
-    <a class="navbar-brand" href="/"><img class="logo-img" src="../Icons/leaves.png" alt="" />Plant Bank</a>
-  </div>
-  <ul class="nav-links">
-    <li class="nav-item"><a class="link" href="/">Home</a></li>
-    <li class="nav-item"><a class="link" href="/about">About</a></li>
-    <li class="nav-item"><a class="link" href="/reference">Reference</a></li>
-  </ul>
-  <div class="burger">
-    <div class="line1"></div>
-    <div class="line2"></div>
-    <div class="line3"></div>
-  </div>
-</nav>
-<!--search bar area-->
-<section class="aboutPage">
-  <section class="mainContent">
-    <h2 class="title mb-2">Project Concept:</h2>
-    <!--    <p class="list-info">Utilizing the Trefle api; create a minimalisic, simple, and accessible web application for users to quickly gather plant inforamtion and specificaitons.</p>-->
-
-    <h2 class="title mb-2">Project Team Members:</h2>
-    <ul class="list">
-      <li><h3>Liam Rotchford</h3></li>
-      <li><h3>Iris Li</h3></li>
-      <li><h3>Yufei Tao</h3></li>
+  <nav>
+    <div class="logo">
+      <a class="navbar-brand" aria-label="Title Home Nav link" href="/"><img class="logo-img" src="../Icons/leaves.png"
+          alt="" />Plant Bank</a>
+    </div>
+    <ul class="nav-links">
+      <li class="nav-item" aria-label="Home Nav link"><a class="link" href="/">Home</a></li>
+      <li class="nav-item" aria-label="About Nav link"><a class="link" href="/about">About</a></li>
+      <li class="nav-item" aria-label="Reference Nav link"><a class="link" href="/reference">Reference</a></li>
     </ul>
+    <div class="burger">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </nav>
 
-    <h2 class="title mb-2">Github repo address: </h2>
-    <ul class="list">
-      <li><h3><a href="https://github.com/LiamRotchford5671/PlantDataBank">Plant Bank</a></h3></li>
-    </ul>
+  <section class="aboutPage container-fluid">
+    <section class="mainContent col-12">
+      <div class="mb-4 d-flex justify-content-center">
+        <h1 aria-label="About Title">
+          <i class="fas fa-xs fa-leaf fa-flip-horizontal"></i>
+          About
+          <i class="fas fa-xs fa-leaf"></i>
+        </h1>
+      </div>
+      <h2 class="title mb-2">Project Concept:</h2>
+      <h3 class="list-info" aria-label="Project Concept">Utilizing the Trefle api; create a minimalisic, simple, and
+        accessible web application for
+        users to quickly gather plant inforamtion and specificaitons.</h3>
 
-    <h2 class="title mb-2">Deplyment: </h2>
-    <ul class="list">
-      <li><a href="/">*information to be added*</a></li>
-    </ul>
+      <h2 class="title mb-2">Project Team Members:</h2>
+      <ul class="list" aria-label="Team Members">
+        <li>
+          <h3 aria-label="Liam Rotchford">Liam Rotchford</h3>
+        </li>
+        <li>
+          <h3 aria-label="Iris Li">Iris Li</h3>
+        </li>
+        <li>
+          <h3 aria-label="Yufei Tao">Yufei Tao</h3>
+        </li>
+      </ul>
 
-    <h3>API:</h3>
-    <ul class="list">
-      <li><a class="last" href="https://trefle.io/about">Trefle</a></li>
-      <li><a href="">some api information to be added</a></li>
-    </ul>
+      <h2 class="title mb-2">Github repo address: </h2>
+      <ul class="list">
+        <li>
+          <h3 aria-label="Github Repository Link"><a href="https://github.com/LiamRotchford5671/PlantDataBank">Plant
+              Bank</a></h3>
+        </li>
+      </ul>
 
+      <h2 class="title mb-2">Deployment: </h2>
+      <ul class="list">
+        <li>
+          <h3 aria-label="Hosting Site Link"><a
+              href="https://plantbank.herokuapp.com/">https://plantbank.herokuapp.com/</a></h3>
+        </li>
+      </ul>
 
+      <h2 class="title mb-2">API:</h2>
+      <ul class="list">
+        <li>
+          <h3 aria-label="API Site Link"><a class="last" href="https://trefle.io/">Trefle</a></h3>
+        </li>
+        <h3 aria-label="API Information">Open and freely accessible botanical data source and REST API. Plant data and
+          information
+          gathered from the following resources.</h3>
+        <div class="d-flex justify-content-center">
+          <img src="../images/API-Resources.png" alt="API Data Resources">
+        </div>
+      </ul>
 
+    </section>
+    <script type="text/javascript" src="../javascripts/about.js"></script>
   </section>
-  <script type="text/javascript" src="../javascripts/about.js"></script>
-</section>
 
 </body>
 
-<footer class="credits" font-size="small">
+<footer class="credits" font-size="small" aria-label="Footer Team Names">
   <p class="credit-text">Plant Bank</p>
   <p class="credit-text">Authored by: Iris Li, Liam Rotchford, Yufei Tao</p>
 </footer>
