@@ -1,0 +1,37 @@
+{
+    "Plants": [{
+            "common_name": "Robert geranium",
+            "slug": "geranium-robertianum",
+            "image_url": "https://bs.floristic.org/image/o/15aff4c873c771b9ea9ded1648b7b23b8641a2a5"
+        }, {
+            "common_name": "Blackthorn",
+            "slug": "prunus-spinosa",
+            "image_url": "https://bs.floristic.org/image/o/74001fa4fbba45263756df516209aba8525620f9"
+        }, {
+            "common_name": "Ground ivy",
+            "slug": "glechoma-hederacea",
+            "image_url": "https://bs.floristic.org/image/o/ea4ea7626a6c88ab532de0cb6679689cb618fc70"
+        }, {
+            "common_name": "Stickywilly",
+            "slug": "galium-aparine",
+            "image_url": "https://bs.floristic.org/image/o/a889db2f581d38b0780bc0ee66549b1583a1d4f4"
+        }, {
+            "common_name": "European alder",
+            "slug": "alnus-glutinosa",
+            "image_url": "https://bs.floristic.org/image/o/2730cc06110e471d878bf14af815f83905866a64"
+        }, {
+            "common_name": "Rose moss",
+            "slug": "portulaca-grandiflora",
+            "image_url": "https://bs.floristic.org/image/o/d7c49ce43ba4db2f34104651abe83baa264da463"
+        },
+        {
+            "common_name": "Eltrot",
+            "slug": "heracleum-sphondylium",
+            "image_url": "https://bs.floristic.org/image/o/795061348098dfe2c4cdedd6a5dcb5c9db848d55"
+        }, {
+            "common_name": "Tufted hairgrass",
+            "slug": "deschampsia-cespitosa",
+            "image_url": "https://bs.floristic.org/image/o/71208fe6c999c875bdabd06f2663ef768edbbd82"
+        }
+    ]
+}
